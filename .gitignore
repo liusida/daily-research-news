@@ -1,0 +1,6 @@
+.env
+.venv/
+site/
+.daily.lock
+logs/
+__pycache__/
