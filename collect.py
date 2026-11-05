@@ -3,7 +3,7 @@
 Writes raw/YYYY-MM-DD.txt (for the agent) and raw/YYYY-MM-DD.json (for scripts).
 Usage: uv run collect.py [--date YYYY-MM-DD] [--days N]
 arXiv: papers announced on DATE, from the "past week" listing pages (works up to ~1 week back).
-Forums: posts since the previous weekday (UTC), so Monday includes the weekend.
+Forums: posts from the full UTC day before DATE. Weekend dates have forum posts only.
 """
 import argparse, datetime as dt, json, re, xml.etree.ElementTree as ET
 from pathlib import Path
@@ -15,13 +15,6 @@ from tqdm import tqdm
 UA = {"User-Agent": "news-digest/0.1 (personal research digest)"}
 ARXIV_CATS = ["cs.LG", "cs.CL", "cs.AI"]
 LW_GRAPHQL = "https://www.lesswrong.com/graphql"
-
-
-def prev_weekday(d):
-    d -= dt.timedelta(days=1)
-    while d.weekday() >= 5:
-        d -= dt.timedelta(days=1)
-    return d
 
 
 def get_retry(url, **kw):
@@ -38,6 +31,11 @@ def latest_listing_day():
     html = get_retry(f"https://arxiv.org/list/{ARXIV_CATS[0]}/pastweek", params={"show": 25}).text
     label = html.split("<h3>")[1].split("(")[0].strip()
     return dt.datetime.strptime(label, "%a, %d %b %Y").date()
+
+
+def target_day():
+    """Date of the next digest: the newest arXiv batch, or today (UTC) if that is later (weekends)."""
+    return max(latest_listing_day(), dt.datetime.now(dt.UTC).date())
 
 
 def fetch_arxiv_listing(day):
@@ -97,19 +95,18 @@ def fetch_lesswrong(days, until=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--days", type=int, default=None,
-                    help="LessWrong/AF: full days before --date (default: since the previous weekday, so Monday covers Fri-Sun)")
+    ap.add_argument("--days", type=int, default=1, help="LessWrong/AF: full UTC days before --date")
     ap.add_argument("--date", default=None, help="batch date to collect (default: newest arXiv batch)")
-    ap.add_argument("--print-latest", action="store_true", help="only print the newest batch date")
+    ap.add_argument("--print-latest", action="store_true", help="only print the date the next digest is for")
     a = ap.parse_args()
     if a.print_latest:
-        print(latest_listing_day().isoformat())
+        print(target_day().isoformat())
         return
-    today = a.date or latest_listing_day().isoformat()
+    today = a.date or target_day().isoformat()
     day = dt.date.fromisoformat(today)
-    arxiv = fetch_arxiv_listing(day)
+    arxiv = fetch_arxiv_listing(day) if day.weekday() < 5 else []  # no arXiv batch on weekends
     # Forums: the full UTC day(s) before the digest date, so days never overlap.
-    days = a.days or (day - prev_weekday(day)).days
+    days = a.days
     lw = fetch_lesswrong(days, dt.datetime(day.year, day.month, day.day, tzinfo=dt.UTC))
     print(f"Forum window: {days} day(s) before {day}")
     items = arxiv + lw

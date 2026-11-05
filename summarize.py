@@ -21,7 +21,7 @@ Write a Markdown digest with exactly these parts:
 # Research digest — {date}
 
 ## Top picks
-Choose the 5-8 most important items. For each:
+Choose the 5-8 most important items (fewer if there are only a few items, e.g. on weekends). For each:
 ### <short plain title>
 Two short sentences, at most 35 words total: (1) the main idea, (2) the main result.
 Then a line with only the item tag, like: `{{L12}}` (use the item's number).
@@ -82,7 +82,10 @@ def main():
     blob = "\n\n".join(f"[item {i}] [score {key(x):.2f}] ({x['source']}) {x['title']}\n{x['text'][:1500]}" for i, x in enumerate(picked, 1))
     prompt = PROMPT.format(interests=Path("interests.md").read_text(), date=a.date, items=blob)
     print(f"Summarizing {len(picked)} items (score >= {a.min}) from {path} ...")
-    reply = ask_llm(prompt, a.backend, a.model)
+    if not picked:
+        reply = f"# Research digest — {a.date}\n\nNo relevant new items today."
+    else:
+        reply = ask_llm(prompt, a.backend, a.model)
     names = {"arxiv": "arXiv", "lesswrong": "LessWrong", "alignmentforum": "Alignment Forum"}
     def link(m):
         n = int(m.group(1))
