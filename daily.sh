@@ -10,15 +10,18 @@ exec 9>.daily.lock; flock -n 9 || { echo "another run is in progress"; exit 0; }
 echo "== $(date -u '+%F %T UTC')"
 git pull --ff-only -q
 D=$(uv run collect.py --print-latest)
-if [ -f "digests/$D.md" ]; then echo "digest for $D already exists, nothing to do"; exit 0; fi
+if [ -f "digests/$D.md" ]; then
+  echo "digest for $D already exists"
+else
+  uv run collect.py --date "$D"
+  uv run filter.py --backend jev --date "$D"
+  uv run summarize.py --date "$D"
+fi
 
-uv run collect.py --date "$D"
-uv run filter.py --backend jev --date "$D"
-uv run summarize.py --date "$D"
+# Always publish and save, so a failed step is fixed by the next run.
 uv run build_site.py
-mkdir -p "$WEB_ROOT" && cp site/index.html "$WEB_ROOT/index.html"
-
+cp site/index.html "$WEB_ROOT/index.html"
 git add raw digests
-git commit -qm "Digest $D"
+if ! git diff --cached --quiet; then git commit -qm "Digest $D"; fi
 git push -q
 echo "published $D"
