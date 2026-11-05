@@ -94,6 +94,7 @@ def main():
         x = picked[n - 1]
         return f"[{names[x['source']]}]({x['url']})"
     text = re.sub(r"`?\{L(\d+)\}`?", link, reply)
+    text = re.sub(r"\n## [^\n]+\n+(?=## |\Z)", "\n", text)  # drop empty sections
     Path("digests").mkdir(exist_ok=True)
     out = Path(f"digests/{a.date}.md")
     out.write_text(text + "\n")
