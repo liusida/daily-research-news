@@ -42,6 +42,7 @@ main h2 { font-size:20px; margin:36px 0 12px; padding-bottom:6px; border-bottom:
 main h3 { font-size:18px; margin:26px 0 6px; }
 main p { margin:6px 0; }
 main a { color:var(--accent); text-decoration:none; } main a:hover { text-decoration:underline; }
+main .likes { color:var(--muted); font-size:12px; margin-left:6px; }
 main ul { padding-left:20px; } main li { margin:6px 0; }
 .empty { color:var(--muted); }
 .src { margin-top:40px; padding-top:12px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }

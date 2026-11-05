@@ -28,10 +28,6 @@ Choose the 5-8 most important items (fewer if there are only a few items, e.g. o
 Two short sentences, at most 35 words total: (1) the main idea, (2) the main result.
 Then a line with only the item tag, like: `{{L12}}` (use the item's number).
 
-## Also worth a look
-One line each, at most 15 words, for the other items worth knowing: `- <main idea or result> {{L12}}`.
-Skip items that are only loosely related. Group by theme with short **bold** labels if it helps.
-
 ## Today in one line
 One sentence about the main trend today, if there is one.
 
@@ -94,7 +90,10 @@ def main():
         if not 1 <= n <= len(picked):
             return "(link missing)"
         x = picked[n - 1]
-        return f"[{names[x['source']]}]({x['url']})"
+        extra = f' <a class="likes" href="https://www.alphaxiv.org/abs/{x["url"].rsplit("/", 1)[-1]}" title="likes on alphaXiv">♥ {x["likes"]}</a>' if x.get("likes") else ""
+        if "karma" in x:
+            extra = f' <span class="likes" title="karma on {names[x["source"]]}">▲ {x["karma"]}</span>'
+        return f"[{names[x['source']]}]({x['url']}){extra}"
     text = re.sub(r"`?\{L(\d+)\}`?", link, reply)
     text = re.sub(r"\n## [^\n]+\n+(?=## |\Z)", "\n", text)  # drop empty sections
     Path("digests").mkdir(exist_ok=True)

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Daily job (run by cron on the server): build the newest digest, publish the page, save data to git.
-# Safe to run many times: it does nothing if the newest arXiv batch already has a digest.
+# Safe to run many times: it does nothing if today (UTC) already has a digest.
 set -euo pipefail
 cd "$(dirname "$0")"
 export PATH="$HOME/.local/bin:$PATH"
