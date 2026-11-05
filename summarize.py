@@ -25,7 +25,10 @@ Write a Markdown digest with exactly these parts:
 ## Top picks
 Include EVERY item below, in the same order as given (do not skip or reorder any). For each:
 ### <short plain title>
-Two short sentences, at most 35 words total: (1) the main idea, (2) the main result.
+Two short sentences, at most 40 words total: (1) the main idea, (2) the main result.
+Make the result concrete: use one short, specific example from the text (what was tested, what happened),
+e.g. "The student learned a preference for cats, even when trained only on number tokens."
+Avoid empty results like "They found this effect in their tests." If the text gives no concrete example, state the result plainly.
 Then a line with only the item tag, like: `{{L12}}` (use the item's number).
 
 ## Today in one line
