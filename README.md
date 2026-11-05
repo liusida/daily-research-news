@@ -11,7 +11,7 @@ A short daily digest of new **interpretability and large-model** research, publi
 2. **Score** (`filter.py`): each item's title and abstract are scored 0–3 for relevance by
    [Jev](https://docs.typesafe.ai/), a decision model, using the interests in `interests.md`.
    (`--backend claude` is also available.)
-3. **Summarize** (`summarize.py`): an LLM (default OpenAI `gpt-6-luna`) writes a short, plain-English
+3. **Summarize** (`summarize.py`): an LLM (default OpenAI `gpt-6.1-terra`) writes a short, plain-English
    digest of the top items. Links are filled in by the script from the collected data, never written
    by the model.
 4. **Publish** (`build_site.py`): all digests become one static page with a calendar.

@@ -3,7 +3,7 @@
 Reads raw/DATE.scored-jev.json (or --scored), writes digests/DATE.md.
 Usage: uv run summarize.py [--date YYYY-MM-DD] [--min 2.0] [--backend claude|openai] [--model NAME]
   claude: uses the logged-in `claude` CLI (default model claude-sonnet-5-5)
-  openai: uses OPENAI_API_KEY from .env (model from --model or OPENAI_MODEL, default gpt-6-luna)
+  openai: uses OPENAI_API_KEY from .env (model from --model or OPENAI_MODEL, default gpt-6.1-terra)
 """
 import argparse, re, datetime as dt, json, subprocess
 from pathlib import Path
@@ -11,6 +11,8 @@ from pathlib import Path
 PROMPT = """You write a daily research digest for an independent interpretability researcher.
 They read English slowly. Write very simply: short sentences, common words, no hype,
 no paper-style phrases, no method details, few numbers. Only the main idea and the main result.
+Be accurate: only state what the text clearly says. If the text is unclear or seems to contradict
+itself, stay general. Never add timing ("before X"), causes, or numbers the text does not clearly state.
 
 Their interests:
 {interests}
@@ -46,7 +48,7 @@ def ask_llm(prompt, backend, model):
     backend = backend or os.getenv("SUMMARY_BACKEND", "claude")
     if backend == "openai":
         from openai import OpenAI
-        model = model or os.getenv("OPENAI_MODEL", "gpt-6-luna")
+        model = model or os.getenv("OPENAI_MODEL", "gpt-6.1-terra")
         print(f"Using OpenAI model {model}")
         r = OpenAI().chat.completions.create(model=model, messages=[{"role": "user", "content": prompt}])
         text = (r.choices[0].message.content or "").strip()
