@@ -38,7 +38,11 @@ def seen_before(day):
     files = [f for f in Path("raw").glob("????-??-??.alphaxiv.json") if f.name[:10] < day.isoformat()]
     if not files:
         return None
-    return set().union(*(json.loads(f.read_text()) for f in files))
+    seen = set().union(*(json.loads(f.read_text()) for f in files))
+    for f in files:  # also every paper we actually judged that day (the feed's paging can miss a few)
+        seen |= {x["url"].rsplit("/", 1)[-1] for x in json.loads(Path(f"raw/{f.name[:10]}.json").read_text())
+                 if x["source"] == "arxiv"}
+    return seen
 
 
 def fetch_alphaxiv_liked(day, min_likes=MIN_LIKES):

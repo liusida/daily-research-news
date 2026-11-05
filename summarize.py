@@ -23,7 +23,7 @@ Write a Markdown digest with exactly these parts:
 # Research digest — {date}
 
 ## Top picks
-Choose the 5-8 most important items (fewer if there are only a few items, e.g. on weekends). For each:
+Include EVERY item below, in the same order as given (do not skip or reorder any). For each:
 ### <short plain title>
 Two short sentences, at most 35 words total: (1) the main idea, (2) the main result.
 Then a line with only the item tag, like: `{{L12}}` (use the item's number).
