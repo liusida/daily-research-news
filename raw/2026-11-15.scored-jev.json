@@ -1,0 +1,571 @@
+[
+ {
+  "source": "arxiv",
+  "title": "LeanContext: Disentangling Mathematical Resources from Local Formal Context in Lean Whole-Proof Generation",
+  "url": "https://arxiv.org/abs/2611.08277",
+  "authors": "Hang Zhang, Qihao Ye, Litong Liu, Yunbei Zhang, Yugyung Lee, Yue Zhou, Bowen Liu, Emily First, Cheng Han, Qiao Zhuang",
+  "likes": 10,
+  "cats": [
+   "cs.AI"
+  ],
+  "published": "2026-11-05",
+  "text": "Neural theorem proving increasingly uses retrieved premises and project context to support proof generation. Evaluating these resources requires measuring the advantage of target-selected declarations over comparable alternatives and how this advantage depends on training. We introduce LeanContext, a benchmark of 129,826 Lean whole-proof generation problems, to investigate these questions. We group selected complete preceding mathematical declarations as Mathematical Context (MC) and the remaining selected local source commands as Environment Context (EC). Four aligned input views support crossed training and inference evaluations with shared targets and original Lean verification environments. For both diffusion- and autoregressive-based models, selected declarations outperform comparable alternatives by a larger margin when training includes MC. Final-input audits identify omitted declarations referenced by the target. Prioritizing these dependencies improves Pass@32 by 1.40% and 1.70% for LLaDA and Llama, respectively, on 2,000 targets. The selection experiment operates without access to target reference proofs and holds checkpoints, EC, and inference budgets constant. The code and dataset are available at https://github.com/haaaardcvZ/LeanContext.",
+  "score": 1,
+  "score_raw": 0.98,
+  "confidence": 0.68
+ },
+ {
+  "source": "arxiv",
+  "title": "From Video Frames to Robot Meta-Frames: A Unified Latent Interface for World Action Models",
+  "url": "https://arxiv.org/abs/2611.14365",
+  "authors": "Guoqiang Liang, Yiqi Lin, Yanzhe Chen, Kevin Yuchen Ma, Mike Zheng Shou",
+  "likes": 13,
+  "cats": [
+   "cs.CV",
+   "cs.RO"
+  ],
+  "published": "2026-11-10",
+  "text": "Pretrained video diffusion models (VDMs) offer a powerful foundation for World Action Models (WAMs), which jointly predict robot actions and future observations. Building such models requires injecting low-dimensional robot signals (e.g. proprioception, actions, and values) into a latent space shaped by natural videos, and a key design choice is the interface through which these signals enter: existing schemes treat it as a formatting detail, spending a separate latent frame on each signal or bolting on dedicated encoders and decoders. We argue that signal injection is instead a distribution-alignment problem: how well a representation matches the prior of the pretrained VDMs during denoising. Using the relative reconstruction error of a frozen VDM denoiser as a probe, we find that conventional spatial encodings sit far off this prior, whereas frequency-domain packing yields latents that the denoiser corrects far less. Motivated by this diagnostic result, we propose MetaWAM, which folds all robot signals into a single unified meta-frame: each signal is assigned to a disjoint frequency-domain channel band and lifted to the spatial latent by an inverse DCT, yielding a decodable interface aligned with the pretrained VDM prior without any added module or architectural change. A fixed band layout together with slot-aware routing lets the same meta-frame support policy, world-model, and value prediction over a shared set of robot variables. On RoboCasa, MetaWAM reaches 68.9% success while collapsing the per-signal frames into one and cutting inference latency by 39%, and attains 85.0% success on three real-world Franka tasks. Code and models are available at https://github.com/showlab/MetaWAM",
+  "score": 1,
+  "score_raw": 1.1,
+  "confidence": 0.57
+ },
+ {
+  "source": "arxiv",
+  "title": "QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents",
+  "url": "https://arxiv.org/abs/2611.07976",
+  "authors": "Yingjie Tan, Haiquan Qiu, Quanming Yao, Manyi Zhong, Xianzhi Yu, Yaqing Wang",
+  "likes": 10,
+  "cats": [
+   "cs.LG"
+  ],
+  "published": "2026-11-05",
+  "text": "DeepSearch LLM agents repeatedly search and carry retrieved sources into subsequent reasoning steps. This expanding context increases token consumption and latency, although many results do not contribute to later reasoning. We propose Query-Relevant Attention Entropy (QRAE), an online context compression method that uses sparse evidence-assessment heads to decide which intact retrieved chunks should persist across reasoning steps. It scores bounded candidate batches through paired prefills: a query-free control suppresses shared attention responses, while normalized entropy measures the breadth of the positive response within each chunk. High-scoring chunks enter a persistent evidence whitelist and are included in the reasoning context. Uncertain chunks remain outside the reasoning context but are retained in a candidate cache, where they can be retrieved for later reevaluation. QRAE requires neither an additional generative compression pass nor modification of the attention operator. Across multiple DeepSearch benchmarks and reasoning models, QRAE improves task success by an average of 2.35 percentage points and reduces end-to-end latency and reported token usage by an average of 30% and 45%, respectively. These benefits generalize to a model with nearly 100B parameters.",
+  "score": 1,
+  "score_raw": 1.36,
+  "confidence": 0.57
+ },
+ {
+  "source": "arxiv",
+  "title": "CORE: Coarse-to-Fine Search with Context Management for Deep Research",
+  "url": "https://arxiv.org/abs/2611.07859",
+  "authors": "Hoang Tran Vuong, Ngoc Quan Pham, Hung Bui, Fatih Porikli, Dat Quoc Nguyen",
+  "likes": 10,
+  "cats": [
+   "cs.CL",
+   "cs.AI",
+   "cs.IR"
+  ],
+  "published": "2026-11-05",
+  "text": "Deep research agents answer complex questions through repeated search. They rely on a harness that runs their tool calls and returns evidence to their context. This creates a trade-off: Search works best over long passages, which give enough context for reliable semantic matching. But the returned evidence should be short, because every observation stays in the agent's context for the rest of the trajectory. We introduce CORE, a training-free harness that combines coarse-to-fine search with context management. CORE retrieves passages with a dense retriever. It then reuses the token-level similarities from a late-interaction reranker to return only the most relevant snippet from each passage. Context management lets the agent expand the context around sources it has already retrieved and suppresses repeated snippets. In controlled closed-search comparisons with the Tongyi DeepResearch and OpenResearcher harnesses, CORE achieves state-of-the-art answer accuracy and evidence recall across three agent models and three benchmarks (BrowseComp-Plus, BrowseComp-Wikipedia and BrowseComp-Plus-CM), on corpora containing up to 553M documents.",
+  "score": 0,
+  "score_raw": 0.19,
+  "confidence": 0.8
+ },
+ {
+  "source": "arxiv",
+  "title": "Back to Pixels: Lifting Latent Video Diffusion into Pixel Space",
+  "url": "https://arxiv.org/abs/2611.17336",
+  "authors": "Yanke Song, Shuo Chen, Chris Rockwell, Guande He, Nan Liu, Desai Xie, Tianpei Gu, Yong-Hyun Park, Aryan V S, Dennis Yuren Menn, Ming-Hsuan Yang, Xun Huang",
+  "likes": 17,
+  "cats": [
+   "cs.CV"
+  ],
+  "published": "2026-11-12",
+  "text": "Frontier video generation models work in a VAE latent space that compresses video in both space and time. This compression made training tractable, but now limits high-resolution, controllable, and interactive generation -- doubling resolution quadruples token count, conditions apply to groups of frames rather than individual ones, and each response must wait for the rest of its multi-frame block. We present PixVid, a simple yet effective method that lifts a pretrained latent video model to directly generate every frame in pixel space. PixVid keeps the diffusion transformer and replaces the VAE decoder with a convolutional head that renders its outputs into pixels. We find that predicting clean video rather than velocity, together with a larger noise shift, is key to quality. Finetuned from Wan2.1-14B, PixVid is competitive with the latent baseline within $\\sim 1.3$M training clips. Working framewise in pixels, it generates at $2\\times$ higher resolution with the same per-frame token count, keeps depth-conditioned video editing aligned under fast motion, and responds to each action at the next frame. Project page: https://chenshuo20.github.io/PixVid/",
+  "score": 0,
+  "score_raw": 0.23,
+  "confidence": 0.77
+ },
+ {
+  "source": "arxiv",
+  "title": "WorldDraft: If Code Builds the World, Can Video Models Just Render It?",
+  "url": "https://arxiv.org/abs/2611.16217",
+  "authors": "Zhiyu Hou, Wen-Jie Shu, Harold Haodong Chen, Weilin Ruan, Chenfei Liao, Liuzhou Zhang, Disen Lan, Xiaogang Xu, Qi Chen, Ser-Nam Lim",
+  "likes": 10,
+  "cats": [
+   "cs.CV"
+  ],
+  "published": "2026-11-12",
+  "text": "Multimodal coding agents decouple 4D world construction from visual generation, repurposing video models from world generators toward generative renderers. This division of labor raises a fundamental question: if code builds the world, can video models just render it? A reliable generative renderer hinges on two complementary criteria: (i) world preservation, retaining prescribed 4D kinematics and camera paths; and (ii) visual realization, persistently binding text-specified target attributes over time. To evaluate this capability, we introduce WorldDraft, a benchmark of $432$ strictly paired test cases across $48$ executable 4D world families spanning six dynamic challenge categories. Under a $3 \\times 3$ factorial design, WorldDraft orthogonally crosses draft granularity (abstract proxy to previs) and appearance alignment (neutral to conflicting) under identical dynamics. Extensive evaluations across $12$ representative models reveal that: (I) world preservation and visual realization remain in stark operational tension; (II) richer draft scaffolding anchors structure but paradoxically impairs appearance fidelity; and (III) conflicting source cues trigger severe source leakage (up to $64\\%$), exposing fragile cross-modal disentanglement. To mitigate these bottlenecks, we propose WorldDraft-Primer, a plug-and-play visual prompting strategy that consistently improves both objectives across frozen video renderers. Together, WorldDraft and WorldDraft-Primer lay a foundation for bridging programmatic 4D simulation with video generation, advancing physically grounded generative rendering.",
+  "score": 1,
+  "score_raw": 0.64,
+  "confidence": 0.54
+ },
+ {
+  "source": "arxiv",
+  "title": "Fast and Accurate Hand Estimation in Pixels, Interaction and World Space",
+  "url": "https://arxiv.org/abs/2611.07711",
+  "authors": "Jinkun Cao",
+  "likes": 13,
+  "cats": [
+   "cs.CV",
+   "cs.RO"
+  ],
+  "published": "2026-11-05",
+  "text": "Monocular hand mesh estimators commonly predict rig parameters and project the mesh to obtain 2D keypoints. We find that directly predicted 3D joints agree better with 2D predictions, and fitting a mesh to predicted points reduces mesh error. We present FAH (Fast and Accurate Hand Estimation), a family of models built on SAM 3D Body's hand branch through fine-tuning and feature distillation. The models predict corresponding 2D and 3D joints and surface points, fit MANO or MHR-Hand, and optionally estimate anatomical parts and contact without object geometry at inference. Causal refinement reduces acceleration error, and camera estimation places the hands in world space. Experiments show improvements in image-space alignment, hand geometry, contact estimation and world-space tracking over the evaluated baselines. The default ViT-L model runs at 65 fps with mesh fitting on an RTX 4070 Ti SUPER, or 49 fps with parts and contact enabled. The smallest ViT-S model reaches 125 fps without mesh fitting, parts or contact. Code: https://github.com/noahcao/FAH.",
+  "score": 0,
+  "score_raw": 0.02,
+  "confidence": 0.98
+ },
+ {
+  "source": "arxiv",
+  "title": "OptIMerge: Optimization-Based Merging of Diffusion Models",
+  "url": "https://arxiv.org/abs/2611.07543",
+  "authors": "Viraj Shah, Ashwini Pokle, Peyman Milanfar, Mauricio Delbracio, Hossein Talebi",
+  "likes": 10,
+  "cats": [
+   "cs.CV"
+  ],
+  "published": "2026-11-05",
+  "text": "The arithmetic merging of weights from multiple task-specific models fine-tuned from a shared base model, commonly known as model souping, has emerged as a popular strategy for multi-task learning without the computational overhead of joint retraining. However, naive scalar weight averaging frequently leads to severe performance degradation when the constituent models learn structurally divergent feature representations, leading to destructive parameter interference. We study this problem in a largely unexplored setting: merging image-to-image (I2I) diffusion models fine-tuned for dense, pixel-accurate tasks such as image restoration. Unlike the large language models (LLMs) and text-to-image (T2I) diffusion models for which most merging methods were developed, I2I experts encode conflicting spatial priors (e.g., anisotropic motion-blur vs. isotropic defocus-blur) in their convolutional filters, where both naive soup and LLM-style element-wise merging introduce visible artifacts. We introduce OptIMerge, a gradient-based optimization framework: instead of relying on heuristic scalars, OptIMerge learns highly expressive, yet parameter-efficient merger coefficients by minimizing a multi-task diffusion loss over a small set of 100-500 images. OptIMerge parameterizes the merge with architecture-aware transformations: for attention layers, a structured low-rank feature alignment with explicit channel biases; for convolutional layers, per-kernel merger coefficients, and a low-rank Cayley transform that aligns channels by orthogonal rotation without distorting the filters. By keeping the experts frozen and optimizing only these lightweight merger parameters (equivalent to <0.4% of the network footprint), OptIMerge achieves simultaneous multi-task capabilities that rival computationally expensive joint training and decisively outperform zero-shot model soups.",
+  "score": 1,
+  "score_raw": 0.54,
+  "confidence": 0.46
+ },
+ {
+  "source": "arxiv",
+  "title": "Terminal-style Mathematical Modeling Bench: The First Agentic and Verifiable Benchmark for Mathematical Modeling",
+  "url": "https://arxiv.org/abs/2611.08237",
+  "authors": "Xiaojun Wu, Cehao Yang, Xuhui Jiang, Chengjin Xu, Jia Li, Jian Guo",
+  "likes": 10,
+  "cats": [
+   "cs.CL"
+  ],
+  "published": "2026-11-05",
+  "text": "Mathematical modeling turns an open-ended real-world problem into assumptions, a model, a solution, and a defended recommendation, and its answers matter only if they are both close to a credible reference and physically feasible; existing benchmarks either score solver fragments or grade reports with an LLM judge, leaving those numbers unchecked. We introduce TB-MathModel (the Terminal-style Mathematical Modeling Bench), the first benchmark to make complete contest-style modeling problems agentic, verifiable, and terminal at once, over 18 real CUMCM and MCM problems (2023--2025). Each task ships the verbatim statement, official attachments, and figures in a containerized terminal; the agent returns one JSON artifact, scored on the numeric core of the final question against a reproduction of the Outstanding-award paper. Two design choices distinguish it: direction-aware, one-sided scoring, which never penalises beating the anchor, and two-layer feasibility verification---a programmatic gate over six decidable invariant forms plus 624 Lean~4 obligations---with a hard gate that zeroes infeasible answers. Each task is scored against a panel of human outstanding papers rather than one, so a model must be close to many accepted answers; across seven multimodal entries (three seeds each) the strongest reach a multi-reference O-Eval of 64.58\\%, while the \\$2.54 open model holds 59.81\\% at $1/100$ the cost. TB-MathModel turns the numeric core of modeling into a reproducible, machine-checkable signal for measuring long-horizon modeling competence and for collecting agent trajectories. The source code is available at https://github.com/wxj630/terminal-bench-math-modeling.",
+  "score": 0,
+  "score_raw": 0.22,
+  "confidence": 0.79
+ },
+ {
+  "source": "arxiv",
+  "title": "Beyond Compression Ratio: High-Throughput KV Compression for Disaggregated LLM Serving",
+  "url": "https://arxiv.org/abs/2611.04382",
+  "authors": "Junhong Wu, Zedong Liu, Xinyang Ma, Yuhan Chen, Guangming Tan, Dingwen Tao",
+  "likes": 10,
+  "cats": [
+   "cs.DC"
+  ],
+  "published": "2026-11-03",
+  "text": "KV cache compression reduces the communication volume of disaggregated large language model serving, but its practical benefit depends not only on compression ratio and model quality, but also on how efficiently the compression pipeline executes. This requirement becomes increasingly important as modern serving systems adopt high-bandwidth interconnects, where inefficient compression can offset a substantial portion of the saved communication time. This paper presents FastKVComp, a high-throughput KV cache compression data path built on top of KVServe. FastKVComp improves compression execution in two complementary ways. First, it fuses the distribution transformation and low-bit quantization stages into a KVaware TileLang kernel, eliminating intermediate tensor materialization and redundant memory accesses. Second, it replaces the original lossless compression backend with an open, extensible, and searchable backend based on LC, enabling high-performance compression operator pipelines. The fused kernel achieves up to 5.9x speedup, while the new lossless backend increases compression throughput from below 90 GB/s to over 500 GB/s. Across the evaluated workloads, FastKVComp reduces job completion time by up to 2.04x. End-to-end evaluation shows that these optimizations allow KV compression to retain meaningful communication benefits under modern high-bandwidth network.",
+  "score": 0,
+  "score_raw": 0.02,
+  "confidence": 0.98
+ },
+ {
+  "source": "arxiv",
+  "title": "ARE-bench: Benchmarking Agents' Research Ability in Real-World Researcher Sessions and Workspaces",
+  "url": "https://arxiv.org/abs/2611.14364",
+  "authors": "Jiahang Lin, Wanying Ren, Wanghan Xu, Huayu Sha, Yang Shu, Zhonghang Lu, Chengjun Pan, Yi Dong, Shichun Liu, Yuyang Hu, Shihan Dou, Honglin Guo, Huijie Lv, Pujun Zheng, Zhe Sun, Yuankai Ying, Yiding Wang, Jiahao Chen, Zhixiong Yang, Dingbo Yuan, Yicheng Zou, Zhecan Wang, Guoxiu He, Xiaoyu Xing, Qi Zhang, Tao Gui, Xuanjing Huang",
+  "likes": 14,
+  "cats": [
+   "cs.CL"
+  ],
+  "published": "2026-11-10",
+  "text": "Research agents achieve increasingly strong benchmark scores, yet these scores do not necessarily translate into reliable delivery in ongoing research projects. Many research-agent benchmarks emphasize standalone tasks and relatively self-contained workflows in clean or curated workspaces. However, researchers ask agents to complete one step within an ongoing project, where requests depend on earlier session decisions and workspaces contain unfinished files, outdated versions, and failed attempts. We introduce ARE-bench to evaluate whether research agents advance ongoing projects while respecting prior decisions and existing workspace state, grounded in real session context and in-progress workspaces. ARE-bench includes 75 tasks built on agent sessions and full workspaces from recruited researchers' own projects, spanning seven research stages, 33 requirements, and 150 sub-requirements, with 1,173 binary checklist items in total. Each task is anchored at a real user request, preserves its requirements, and summarizes the earlier requests still in effect as background. The complete workspace is replayed to that boundary without cleanup, preserving artifacts from earlier turns. Each checklist is compiled from an intent-aligned rubric and credits any valid solution. Across seven frontier models, the strongest passes every checklist item on only 66.2% of tasks, and Design and Execution rank among the hardest stages for every model. Three models pass about 69% of tasks when only delivery contracts and general norms are checked, but just 28.4% to 40.0% once historical and material or workspace requirements are also checked. Evaluating delivery without these contextual requirements can therefore overestimate research agents and mask differences between them.",
+  "score": 0,
+  "score_raw": 0.25,
+  "confidence": 0.74
+ },
+ {
+  "source": "arxiv",
+  "title": "Factored One-sided Adam-Moment for Practical and Scalable SOAP",
+  "url": "https://arxiv.org/abs/2611.16905",
+  "authors": "Jaemyung Yu, Byeongho Heo, Sangdoo Yun, Dongyoon Han",
+  "likes": 14,
+  "cats": [
+   "cs.LG"
+  ],
+  "published": "2026-11-12",
+  "text": "Second-order optimizers (e.g., Shampoo, SOAP) have emerged as compelling alternatives to Adam/AdamW and promise faster per-step convergence than AdamW in transformer training. However, they still remain costly in practice, and even SOAP still pays substantial optimizer-state memory and eigendecomposition overhead. We ask whether the benefits of SOAP can be retained at nearly the efficiency of AdamW. In this paper, we answer yes with a lightweight SOAP variant, Factored One-sided Adam-Moment (FOAM). The path to practical impact is twofold: first, FOAM employs input-only preconditioning, dropping the output-side Kronecker factor to reduce memory and remove one eigendecomposition. The Kronecker structure of the Hessian shows that this is exact for a diagonal output-side curvature and nearly lossless for a near-diagonal one, as we observe empirically. Second, FOAM replaces SOAP's dense rotated second moment with a factored Adam-moment estimator based on row-by-column statistics. Under the K-FAC Fisher assumption with a diagonal output curvature, this estimator exactly recovers SOAP's dense second moment, and we measure only a 15-20% K-FAC violation, with negligible effect on the update. Our empirical results support the claim that FOAM matches strong SOAP and Muon baselines in validation loss across scales of large language model (LLM) pre-training, uses half of SOAP's optimizer state, runs at Muon-class wall-clock time, and retains robustness across a three-fold learning-rate range. The results hold from 124M to 760M parameters, demonstrating that SOAP's gains need not require SOAP's cost. Code: https://github.com/naver-ai/foam",
+  "score": 1,
+  "score_raw": 0.6,
+  "confidence": 0.4
+ },
+ {
+  "source": "arxiv",
+  "title": "Robust LIDAR Sensor-to-Sensor Domain Generalization via Accumulated-Point Scene Completion",
+  "url": "https://arxiv.org/abs/2610.39516",
+  "authors": "Christoph B Rist, Larissa T Triess, Markus Enzweiler, Dariu M Gavrila",
+  "likes": 10,
+  "cats": [
+   "cs.CV"
+  ],
+  "published": "2026-10-29",
+  "text": "We study domain generalization for LIDAR semantic segmentation. Deep neural networks achieve strong performance on 3D point clouds, yet real-world LIDAR exhibits sensor-specific sampling patterns that hinder transfer across datasets. In many applications, performance on completely unseen sensors is crucial. A model should preferably work on a new setup without prior access to its data or labels. To this end, we introduce a source-only training scheme that adds an occupancy prediction auxiliary objective. We aggregate source-domain scans into a simple world model and use it as the supervision signal, replacing single-scan standard segmentation training. A key property of our approach is that it does not alter the input scan. During training and testing the network consumes the same single-frame LIDAR input, only the supervision signal is enriched via the occupancy objective. At deployment, there is no runtime overhead as the auxiliary head can be dropped for pure segmentation, or kept to obtain scene completion alongside semantic segmentation. In an experimental evaluation across distinct LIDAR datasets, we demonstrate that a model's generalization to new domains can be significantly affected by how it is supervised. In certain setups, performance on unseen domains improves without any explicit domain adaptation (no target scans, no target labels, no sensor priors) and without prediction refinement. At the same time, our method maintains competitive source-domain segmentation performance and incurs no additional inference cost.",
+  "score": 0,
+  "score_raw": 0.03,
+  "confidence": 0.97
+ },
+ {
+  "source": "arxiv",
+  "title": "Generative diffusion in long-range correlated landscapes: Speciation cascade and the foam structure of the score",
+  "url": "https://arxiv.org/abs/2611.02955",
+  "authors": "Jerome Garnier-Brun, Giulio Biroli, Marc Mézard, Jean-Philippe Bouchaud",
+  "likes": 10,
+  "cats": [
+   "cond-mat.dis-nn",
+   "cond-mat.stat-mech",
+   "cs.LG"
+  ],
+  "published": "2026-11-02",
+  "text": "While state of the art for image and video generation, the fundamental reasons for the effectiveness of generative diffusion remain unclear. In particular, the observed advantage of following an entire reverse process with respect to single-shot or autoregressive methods, and for what type of data it may hold, is not well understood. In this work, we aim to better understand the role of the reverse process by considering a complex yet analytically tractable data model, the Gibbs measure of a high-dimensional Gaussian random potential with long-range correlations. Focusing on the exact score, we show that the speciation threshold, in which a trajectory commits to one class of the data, becomes a speciation window, in which the reverse process progressively resolves the Parisi tree of pure states of the full replica-symmetry breaking measure, committing to ever finer branches down to a single pure state. Importantly, these commitments take place at noise levels where the noisy sample distinguishes the pure states only through an energy of order one, beyond the reach of standard replica saddle points. Constructing a Larkin argument suited to such $O(1)$ energy gaps, we describe the score as a foam, with slab-like cells separated by shock-like boundaries. In the variance-exploding process we consider, this window is followed by a shrinkage of the samples towards the data support, and finally by reconstruction within the selected pure state. The denoising error of the exact score follows these stages, dropping during the speciation window with a profile set by the Parisi function alone, and then within the selected state. We believe that the generative foam we describe, and in particular the boundaries between cells, could play an important role in determining where the errors of trained diffusion models redistribute the mass of the generated samples when the data are long-range correlated.",
+  "score": 1,
+  "score_raw": 1.26,
+  "confidence": 0.54
+ },
+ {
+  "source": "arxiv",
+  "title": "GuidedWAM: Training-Free Energy Guidance for World Action Models in Autonomous Driving",
+  "url": "https://arxiv.org/abs/2611.07912",
+  "authors": "Xiyan Su, Finn Rasmus Schäfer, Hojun Lim, Frank Diermeyer, Johannes Betz, Markus Lienkamp",
+  "likes": 10,
+  "cats": [
+   "cs.AI",
+   "cs.RO"
+  ],
+  "published": "2026-11-05",
+  "text": "World action models (WAMs) for autonomous driving couple the driving policy and the visual world model in a single generative network whose objectives are fixed post-training. Conditioning on a new driving objective requires retraining. We study energy guidance as a general mechanism and present GuidedWAM, a model-agnostic framework for injecting driving objectives into frozen WAMs at sampling time. Our framework constructs each objective as differentiable energies on the sampler's intermediate clean-action estimate, which needs only forward access to the frozen model, and is stabilized by sampling-time guidance scheduling, per-energy normalization, and velocity-bounded correction. On the NAVSIM v2 hard-split, guidance improves all three frozen, publicly released WAMs by 1.8 to 3.6 EPDMS, averaged over three sampler seeds, and adds less than 10% to the sampling time per step. These results position energy guidance as a practical post-training control channel for WAMs.",
+  "score": 1,
+  "score_raw": 0.58,
+  "confidence": 0.41
+ },
+ {
+  "source": "arxiv",
+  "title": "Singularity-Bench: Can Agents Build Agents?",
+  "url": "https://arxiv.org/abs/2611.16591",
+  "authors": "Yang Zhou, Krish Agarwal, Zhuoming Chen, Zerui Wang, Zhenyu Zhang, Wenshuang Li, Xinpeng Wei, Zhichen Zeng, Jingyu Liu, Jue Wang, Sen Wu, Ziheng Jiang, Zhen Dong, Han Cai, Binhang Yuan, Ying Sheng, Ce Zhang, Bo Li, Beidi Chen",
+  "likes": 10,
+  "cats": [
+   "cs.AI"
+  ],
+  "published": "2026-11-12",
+  "text": "Frontier AI agents increasingly succeed on realistic, long-horizon tasks and are beginning to improve the systems through which they operate. Yet existing benchmarks often restrict agents to narrow action spaces, use simplified environments, or rely on verification methods that are unreliable for evaluating arbitrary agent-generated systems. We introduce Singularity-Bench, an open-ended benchmark for autonomous AI development with six end-to-end tasks spanning pre-training, mid-training, post-training, inference, the agent harness, and cluster orchestration. Each task requires agents to implement core systems from a minimal starting point and evaluates them against mature human-engineered baselines on identical hardware. Additionally, through extensive red-teaming covering 9 of the 10 categories in the OWASP Top 10 for Agentic Applications, we expose reward-hacking vulnerabilities in the conventional Harbor framework and develop Breakwater, an extension of Harbor that blocks all attacks tested in our study. Across 11 agents built from 7 frontier models and 2 harnesses, Opus 5.5 with Claude Code matches or outperforms the human baseline on all six tasks with a Singularity-Index of 1.25, suggesting it may have the skills needed to reach the singularity. The remaining agents average only 0.58. Our vision is for Singularity-Bench to track how much of AI development agents can already automate and when they may transition from assisting to taking end-to-end responsibility for building stronger successors.",
+  "score": 0,
+  "score_raw": 0.36,
+  "confidence": 0.64
+ },
+ {
+  "source": "arxiv",
+  "title": "Circe: Training-Free LLM Self-Evaluation via Component Interaction Consistency",
+  "url": "https://arxiv.org/abs/2611.07948",
+  "authors": "Shuyi Miao, Zheng Li, Xu Xie, Linrui Xu, Fei Shen, Xiaoyu Du, Tat-Seng Chua",
+  "likes": 10,
+  "cats": [
+   "cs.AI"
+  ],
+  "published": "2026-11-05",
+  "text": "As large language models (LLMs) are increasingly deployed in real-world applications, evaluating the correctness of their responses is crucial for reliable use. However, such evaluation is challenging because reference answers are rarely available in practice. Existing reference-free methods mainly rely on output signals, which may assign high scores to incorrect responses and thus do not necessarily reflect correctness. This motivates exploring the model's internal computation for complementary correctness signals. Recent studies exploit internal states, but they mainly analyze hidden-state trajectories across layers, which record only the combined updates of attention and feed-forward networks (FFNs) and overlook how these components interact. We therefore propose Circe, a training-free self-evaluation method that assesses a response using both internal and external signals, without reference answers or repeated sampling. For internal signals, we first introduce component interaction consistency (CIC), which measures the directional alignment between attention updates in earlier layers and attention-induced FFN output changes in later layers. We further incorporate representation geometry (RG) to characterize normalized displacement and angular changes along layerwise hidden-state trajectories. For the external signal, we convert the mean negative log-likelihood of generated tokens into a bounded likelihood confidence (LC) score. Finally, we fuse CIC, RG, and LC into a unified correctness score. Experiments on five LLMs and six benchmarks across four domains show that our method distinguishes correct from incorrect responses more effectively than existing baselines, and generalizes to multilingual, multimodal, and open-world settings.",
+  "score": 3,
+  "score_raw": 2.64,
+  "confidence": 0.65
+ },
+ {
+  "source": "arxiv",
+  "title": "Ropedia Xperience 2: A Gold Standard for Scaling Physical AI Environments and Behaviors",
+  "url": "https://arxiv.org/abs/2611.17060",
+  "authors": "Hao Li, Fangzhou Hong, Zhaoxi Chen, Hui En Pang, Kairui Hu, Mingze Sun, Runmao Yao, Xinhao Ji, Xiyuan Zheng, Xuanli Chen, Yalun Dai, Yap Kim Hui, Dingwen Zhang, Yuanyuan Gao, Ziang Cao, Cheng Huang Yean, Jackson Peng, Rui Duan, Yaobo Liu, Zetong Wang, Ziwei Liu",
+  "likes": 27,
+  "cats": [
+   "cs.CV"
+  ],
+  "published": "2026-11-12",
+  "text": "Large foundation models such as GPT-6 Astra and Claude Fable 5.1 have recently been shown to control robots directly from visual observations. They nevertheless remain brittle on long-horizon, contact-rich tasks in real-world environments. Further progress depends on two complementary resources: demonstrations of human behavior that supervise how tasks are performed, and interactive environments in which policies can be rolled out, evaluated, and improved in closed loop. Language models have advanced along well-characterized scaling laws; the corresponding question for physical AI is how capability scales with environments and behaviors, which first requires identifying which data to scale and how to produce and reuse such data continuously. To address this question, we introduce Ropedia Xperience 2, comprising 1,589 released metric-scale 3D scans and a collection of 4,230 egocentric recordings of 74 tasks (131 hours). We further show that each capture can be repurposed for robot learning: scenes are converted into physically interactive simulation environments, human motion is retargeted to whole-body robot trajectories, and additional robot behaviors are obtained through virtual teleoperation and automated long-horizon trajectory generation. We propose this joint capture of environments and behaviors as a gold standard for physical AI data collection, laying a data foundation for establishing scaling laws over environments and behaviors.",
+  "score": 0,
+  "score_raw": 0.26,
+  "confidence": 0.75
+ },
+ {
+  "source": "arxiv",
+  "title": "In-Model Context Compression with Agentic Soft Tokens for Long-Horizon LLM Agents",
+  "url": "https://arxiv.org/abs/2610.41291",
+  "authors": "Xuning He, Kai Fan, Runyu Zhang, Binghuan Wang, Yuxiang Zhang, Xue Jiang, Yihong Dong",
+  "likes": 10,
+  "cats": [
+   "cs.CL",
+   "cs.AI",
+   "cs.LG",
+   "cs.NE"
+  ],
+  "published": "2026-10-30",
+  "text": "Long-horizon LLM agents play an important role in solving complex and sustained tasks, with ever-growing interaction contexts. However, these accumulated contexts will raise substantial computational cost and obscure key decision-relevant evidence. Existing methods typically train external compressors or context-management agents to rewrite context as shorter hard-token sequences, but such external selection may not align with the LLM's evolving representation and is necessarily lossy. In this paper, we introduce Agentic Soft-Token Compression (ASTC), a training-free compression method using soft tokens within LLM agent for long-horizon tasks. Specifically, ASTC uses the model's native recurrent dynamics to determine the already absorbed information, leveraging the commonly-used hybrid Gated Delta Network (GDN)-attention. It then carries this information forward as agentic soft tokens while retaining exact values as hard tokens. The resulting compact sequence reduces later-layer computation and yields reusable KV caches, extending the savings across the agent's trajectory. Extensive experiments on long-horizon tasks show that ASTC matches or exceeds the uncompressed agent's accuracy with up to 50.68% fewer end-to-end Attention Pairs, while trained compressors require 15.4 to 103.7 times more Attention Pairs per successful task. These findings highlight agentic soft tokens as a model-native way to carry absorbed context forward as the task representation evolves.",
+  "score": 2,
+  "score_raw": 1.5,
+  "confidence": 0.49
+ },
+ {
+  "source": "arxiv",
+  "title": "LowRAM: Low-Rank Keys and Amortised Values for Composable KV Cache Compression at Test-Time",
+  "url": "https://arxiv.org/abs/2611.07025",
+  "authors": "Teresa Delgado, Hugo Hazard, Martin Benfeghoul, Jun Wang, Zafeirios Fountas",
+  "likes": 10,
+  "cats": [
+   "cs.LG",
+   "cs.CL"
+  ],
+  "published": "2026-11-04",
+  "text": "Autoregressive decoding relies on the KV cache, whose memory footprint grows linearly with context length and caps batch size and throughput. Existing post-training methods exploit redundancy across tokens, layers, and feature dimensions, or lower numerical precision. We identify a complementary axis: within each attention head, values are largely predictable from their corresponding keys. We exploit this with value cache amortisation, which fits a lightweight per-head predictor at test time and stores residuals only for the tokens it reconstructs worst, giving $4\\times$ near-lossless value compression. The predictor can be initialised by meta-learning for substantially reduced prefill overhead, or fitted from scratch in settings that allow a one-off cost, such as multi-query inference. We pair value amortisation with cross-layer low-rank key compression to produce LowRAM, an asymmetric compression pipeline that stays close to lossless across three model families. By reconstructing only a selected subset of KV pairs at each decoding step, LowRAM can keep decoding overhead minimal and achieve up to $5\\times$ higher peak decode throughput at $4\\times$ compression. LowRAM further composes with quantisation and eviction, reaching $26.9\\times$ compression at $94.5\\%$ of baseline performance on long contexts. These results show that treating keys and values as structurally distinct enables efficient, aggressive, and composable KV cache compression.",
+  "score": 0,
+  "score_raw": 0.47,
+  "confidence": 0.53
+ },
+ {
+  "source": "arxiv",
+  "title": "Do Recommenders Need to Think in Words? Latent Reasoning for Efficient LLM-Based Recommendation",
+  "url": "https://arxiv.org/abs/2611.07866",
+  "authors": "Hongyang Su, Beibei Kong, Lei Cheng, Chengxiang Zhuo, Zang Li",
+  "likes": 10,
+  "cats": [
+   "cs.CL"
+  ],
+  "published": "2026-11-05",
+  "text": "LLM-based recommender systems increasingly generate chain-of-thought (CoT) text before each item prediction to activate the LLM's reasoning capacity, costing tens to hundreds of extra tokens per recommendation at inference. We ask whether inference-time reasoning artifacts (textual or latent) can be replaced by training-time supervision alone, without loss of accuracy. We propose LatentRec, a framework for LLM-based generative recommendation that replaces inference-time reasoning artifacts with training-time per-step head supervision. LatentRec has three components. A 2.5M-parameter Continuous Thought Module iterates K latent reasoning steps over the LLM's hidden state during training. Soft Token Selection bridges the ~14x norm gap between hidden states and input embeddings. A Per-step Reasoning Loss (PRL) supervises every intermediate state through the LLM's prediction head against the first token of the target Semantic ID. The trained LLM retains this accuracy without the module at inference, so the module can be discarded at deployment. On three Amazon benchmarks, LatentRec improves HR@10 by 4.0-5.0% (relative) over a CoT-distilled baseline at 18.3x lower latency (batch=1). Per-step training supervision consistently improves accuracy across three datasets, paid once at training rather than at every recommendation.",
+  "score": 1,
+  "score_raw": 1.48,
+  "confidence": 0.46
+ },
+ {
+  "source": "arxiv",
+  "title": "Sim(3)-TurboReg: Robust and Efficient Scale-Aware Registration via Tri-Scale Consistency",
+  "url": "https://arxiv.org/abs/2611.14135",
+  "authors": "Zijun Zhou, Shaocheng Yan, Zhenjun Zhao, Yutong Hu, Ke Yang, Yingdong Gu, Pengcheng Shi, Jiayuan Li",
+  "likes": 13,
+  "cats": [
+   "cs.CV"
+  ],
+  "published": "2026-11-10",
+  "text": "Feed-forward 3D foundation models recover geometry at high fidelity, yet inference memory constraints keep them from processing long sequences natively. Current streaming systems work around this limit with sliding-window chunking, which introduces severe monocular scale ambiguity. Resolving this ambiguity requires Sim(3) registration that stays accurate and efficient under outlier contamination. We introduce Sim(3)-TurboReg, which reformulates the compatibility graph construction of TurboReg by replacing absolute distance constraints with a strict Tri-Scale Consistency (TSC) criterion. Our analysis shows that TSC suppresses both mismatching and coordinate-distortion outliers. We integrate the resulting solver into existing streaming systems and obtain high-fidelity, kilometer-scale reconstruction for feed-forward models. On controlled unknown-scale registration at 90% outliers, ours matches RANSAC accuracy with 92.5% lower median latency. In DA3-Streaming on KITTI, ours improves mean ATE RMSE by 22.2% and reduces mean end-to-end time by 16.6%. Code: https://github.com/ivan-zzj/Sim3-TurboReg",
+  "score": 0,
+  "score_raw": 0.01,
+  "confidence": 1.0
+ },
+ {
+  "source": "arxiv",
+  "title": "GTAGym: AAA Game Tasks Environment for Evaluation and Reinforcement Learning",
+  "url": "https://arxiv.org/abs/2611.13028",
+  "authors": "Jiajun Chen, Shicheng Fang, Jiahao Lu, Yuxin Wang, Xipeng Qiu",
+  "likes": 13,
+  "cats": [
+   "cs.CV",
+   "cs.AI",
+   "cs.CL"
+  ],
+  "published": "2026-11-09",
+  "text": "AAA games offer a rich testbed for evaluating agent perception, reasoning, and control. However, evaluating whether agents can complete tasks in AAA games is challenging and often human-annotated because task outcomes are often difficult to verify automatically, let alone applying it for Reinforcement Learning (RL). We introduce GTAGym, an environment and framework for evaluation and RL on GTA V tasks. Its evaluation benchmark, GTAVBench, derived from GTA V main-story missions, contains 103 online tasks reconstructed across nine task families, alongside 47 image-based shooting and sniping tasks using GTA V imagery. A web server provides access to the online environment and evaluation interface, supporting parallel testing through screenshots and keyboard-mouse actions with automatic engine-state outcome checks. We evaluate six frontier LLMs on GTAVBench with textual task instructions and on its GTAVBench-AGI branch, where instructions appear only in the first screenshot and a harness automatically compresses interaction history. The best configuration achieves 70.9% overall accuracy in GTAVBench-AGI, yet aerial navigation, evasion and interception remain difficult. GTAGym also provides a scalable generator that samples task parameters within user-specified ranges and option sets under fixed templates, creating batches of 3D and image-based shooting environments for RL with automatic reward and termination signals. LoRA RL of Qwen3.8-27B on generated on-foot navigation tasks improves the in-domain performance and transfers to out-of-domain task categories, and native GTA V tasks from 15% to 23%.",
+  "score": 0,
+  "score_raw": 0.24,
+  "confidence": 0.76
+ },
+ {
+  "source": "arxiv",
+  "title": "RuACT: Recovering Inactive Rubrics as Adaptive Critics and Teachers",
+  "url": "https://arxiv.org/abs/2611.09597",
+  "authors": "Yijun Li, Zhengxi Lu, Zhipiao Liu, Jinzheng Yu, Xutao Weng, Jian Shao, Yongliang Shen",
+  "likes": 10,
+  "cats": [
+   "cs.CL"
+  ],
+  "published": "2026-11-06",
+  "text": "Rubric-based reinforcement learning (RL) extends RL with verifiable rewards to open-ended tasks by scoring each response against query-specific rubrics. Under group-relative optimization, however, a rubric that every sampled response fails (unreachable) or passes (saturated) gives all responses the same outcome and no learning signal; in Qwen3-4B medical training, 60.88% of query-rubric observations are inactive. We find that the two states lack different supervision: stating an unreachable rubric in the prompt raises its satisfaction from 1.13% to 91.25%, whereas responses that all pass a saturated rubric still differ in quality. We therefore propose RuACT (Rubrics as Adaptive Critics and Teachers), which assigns each inactive rubric the role that supplies what it lacks. Rubric as Teacher uses unreachable rubrics as privileged information for reward-gated on-policy self-distillation, and Rubric as Critic decomposes saturated rubrics into child rubrics that separate current responses while sharing the parent's weight. RuACT outperforms GRPO, rubric reweighting, and rubric-guided exploration on all four medical and scientific benchmarks with Qwen3-4B and achieves the best average with Qwen3-1.7B. On initially unreachable rubrics, unguided recovery rises from 35.02% to 42.86%, while child refinement improves reward-quality alignment on independent rollouts from 57.74% to 60.77%. Code is available at https://github.com/ZJU-REAL/RuACT.",
+  "score": 1,
+  "score_raw": 0.93,
+  "confidence": 0.47
+ },
+ {
+  "source": "arxiv",
+  "title": "Classical Energies Learn to Reason 1,000x Faster than Looped Models",
+  "url": "https://arxiv.org/abs/2611.17309",
+  "authors": "Benjamin Hoover, Hugh Blayney, James C. R. Whittington",
+  "likes": 11,
+  "cats": [
+   "cs.AI",
+   "cs.LG"
+  ],
+  "published": "2026-11-12",
+  "text": "Looped models have emerged as a prominent paradigm for reasoning, with successes on simple reasoning puzzles such as Sudoku-Extreme and Maze-Unique. However, these models can be unstable, slow to train, and use many parameters and FLOPs to solve simple puzzles. Descent on an energy not only mitigates these issues but also offers advantages: built-in early stopping, compute that adapts to problem difficulty, fast training without differentiating through a solver, and interpretable weights that learn the constraints of the puzzle. Here we demonstrate this with a learned version of Hopfield & Tank's energy from the 80s, which we term CRAM, solves 99.996% of Sudoku-Extreme and 100% of Maze-Unique test puzzles after 42 ms and 132 ms of training on one GPU, at least 1,000x faster than looped models on these tasks. CRAM also matches baseline looped models at their highest accuracy on Sudoku-Extreme using at least 282x fewer inference FLOPs. Our work suggests two things. First, that energies are an extremely promising direction for training reasoning from data. Second, a caution against using trivially solvable benchmarks like Sudoku and Maze to test the scalability of looped reasoning techniques.",
+  "score": 1,
+  "score_raw": 1.49,
+  "confidence": 0.48
+ },
+ {
+  "source": "arxiv",
+  "title": "How Far Can Untrained Neural Networks Go in Anomaly Detection? From Tables to Pixels",
+  "url": "https://arxiv.org/abs/2611.08136",
+  "authors": "Hyojun Yi, Geunyoung Kim, Hogeon Seo, Seunghyoung Ryu",
+  "likes": 10,
+  "cats": [
+   "cs.LG",
+   "cs.CV"
+  ],
+  "published": "2026-11-05",
+  "text": "Anomaly detection (AD) is often framed as a representation-learning problem, where strong performance is expected to require learned features or AD-specific optimization. However, this view can overlook the intrinsic separability of anomalies from normal references, even in the absence of learned representations. We therefore investigate how far untrained neural networks can go in anomaly detection. To this end, we propose PRISM, a framework combining fixed random nonlinear features with normal-reference Mahalanobis scoring for tabular detection and dense visual localization. Across 47 tabular datasets in ADBench, PRISM-T achieves the highest mean AUROC (86.4%) and the second-highest mean AUPRC (65.9%) among the compared methods. On MVTec AD and VisA, covering 27 visual categories, PRISM-V achieves mean image-level and pixel-level AUROCs of 90.4% and 96.4%, respectively. Notably, both models achieve these results without neural weight optimization or pretrained representations. A theoretical analysis further characterizes how nonlinear transformations affect the mean and covariance contributions to the Mahalanobis score gap, while empirical analyses examine the resulting score separability. These findings establish PRISM as both a competitive anomaly detector and a prior-to-learning baseline for assessing the added value of learned representations in anomaly detection.",
+  "score": 0,
+  "score_raw": 0.39,
+  "confidence": 0.62
+ },
+ {
+  "source": "arxiv",
+  "title": "FreeOcc: Decoupling Ego-Motion for Efficient 4D Occupancy Forecasting via Continuous Flow Matching",
+  "url": "https://arxiv.org/abs/2611.08128",
+  "authors": "Zeping Zhang, Zhuoya Zhao, Samy Metari, Robert Laganière",
+  "likes": 10,
+  "cats": [
+   "cs.CV"
+  ],
+  "published": "2026-11-05",
+  "text": "Current 4D occupancy world models use heavy cross-attention or deep recurrence to disentangle ego-motion from scene dynamics. This requires significant computational capacity. However, this effort is largely redundant since the ego-vehicle's intended future motion is provided by the downstream motion planner. We present FreeOcc, a lightweight continuous-time world model that introduces explicit $SE(2)$ geometric decoupling into a conditional flow-matching framework. By mathematically factoring out self-motion, we create a purely dynamic feature space. This space supports attention-free temporal fusion and allows physics-constrained ODEs to operate strictly on residual agent kinematics. To maximize deployment efficiency, FreeOcc introduces an uncertainty-aware blending mechanism. This routes well-observed voxels to a single-pass decoder, reserving the ODE solver exclusively for ambiguous, high-uncertainty regions. Requiring only 28.3M parameters-roughly 40% of comparable models-our optimal ensemble mode (FreeOcc-E) runs at 27 FPS. On nuScenes, FreeOcc achieves state-of-the-art forecasting performance with a 0.47 m Near Field Chamfer Distance (NFCD) and 32.1% mIoU. Furthermore, the model transfers zero-shot to SemanticKITTI. It also proves highly robust, retaining 92.8% of its ideal mIoU under significant sensor packet loss and timestamp jitter.",
+  "score": 0,
+  "score_raw": 0.12,
+  "confidence": 0.89
+ },
+ {
+  "source": "lesswrong",
+  "title": "Transcript: Yudkowsky & Irving debate scalable oversight",
+  "url": "https://www.lesswrong.com/posts/Cssj22TretAQQajZ4/transcript-yudkowsky-and-irving-debate-scalable-oversight",
+  "authors": "gustaf",
+  "karma": 22,
+  "posted": "2026-11-14T19:53:03.046Z",
+  "tags": [
+   "Debate (AI safety technique)",
+   "Resolution (org)",
+   "Scalable Oversight",
+   "Transcripts",
+   "AI",
+   "Community"
+  ],
+  "text": "In August 2026 Eliezer Yudkowsky and Geoffrey Irving had a 90-minute debate at the ILIAD III Conference. You can watch the \"Fixed Audio\"-version on YouTube. They first identify their disagreements like How hard is superalignment? and discuss the theory of impact of Irving's new organization Resolution. They then go into depth on scalable oversight.\n\nEpistemic Effort: I transcribed the audio using 5 services and merged those using Claude Fable 5.1. Then I spent ~6 hours carefully reviewing and editing the transcript. (I also added links and [disagreement which they indicated non-verbally]. Subheadings by Claude Fable 5.2.)\n\n----------------------------------------\n\n\nIntroductions\nYudkowsky [00:00]: Hi, I'm Eliezer, well-known Harry Potter fan fiction author. [cheering] [laughter]\n\nIrving [00:10]: I'm Geoffrey Irving. I'm now the chief scientist at Resolution. I was at, for better or worse, various labs before, and also AISI.\n\nAudience member: And Pixar.\n\nIrving: And Pixar. [laughter]\n\n\nSurvey of disagreements\nYudkowsky: So we're going to try to resolve all of our open disagreements over the course of the next hour. [laughter] An impossible task, but not as impossible as some, really. [laughter] So I would propose that we maybe take turns stating beliefs, that we suspect the other might disagree with, that we ourselves hold. And then this [lowers his hand to the floor] is very low disagreement, and this [holds his hand up high] is very high disagreement.\n\nAnd so we can do a qui",
+  "score": 1,
+  "score_raw": 1.17,
+  "confidence": 0.16
+ },
+ {
+  "source": "lesswrong",
+  "title": "RL Reward-Hack Auditing for Chinese AI Safety",
+  "url": "https://www.lesswrong.com/posts/jwCPQhLWbWnwMhHME/rl-reward-hack-auditing-for-chinese-ai-safety",
+  "authors": "CMLKevin",
+  "karma": 13,
+  "posted": "2026-11-14T13:04:10.808Z",
+  "tags": [
+   "China",
+   "Reinforcement learning",
+   "AI"
+  ],
+  "text": "TL;DR:\nAccess to AI safety talent & resources, particularly for labs during training, is sorely lacking in China. We created one of the largest AI safety communities in China, and plan to next start with auditing reward-hacks of unreliable upstream RL environments that domestic data vendors provide to Chinese frontier labs (which induces reward hacking and a whole host of dangerous downstream tendencies).\n\nRL tasks are notoriously prone to exploitation by reward-seeking agents (see examples here, here, and here). In Xiaomi's MiMo v2.6 RL environments that were open-sourced, 2/3 had leaks on Git logs. There's a few clusters of common pitfalls that environments run into, but overall things evolve quickly. From our conversations with employees, CN labs typically don't divert enough people to this particular area, especially since project leads would want senior researchers to work on capabilities research, and because slowing down the development cycle is widely seen as too costly.\n\nThe rough shape of our initial solution is an embedded team of staff directly working on identifying & fixing broken environments, working in tandem with the alignment & safety departments within each lab (afaik we estimate that the main Chinese AI players only have 5-10 people per company working on alignment and harm reduction). We are currently in good standing with several labs (our courses' students are often lab employees).\n\nWe also plan to produce seasonal (and case-by-case) public reports of ",
+  "score": 1,
+  "score_raw": 0.82,
+  "confidence": 0.42
+ },
+ {
+  "source": "lesswrong",
+  "title": "Datasets Determine the Difficulty of Interpretability",
+  "url": "https://www.lesswrong.com/posts/EMKRpxKswPZEbP8ey/datasets-determine-the-difficulty-of-interpretability",
+  "authors": "testingthewaters",
+  "karma": 8,
+  "posted": "2026-11-14T08:57:30.502Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "Recently Goodfire has come out swinging with two posts indicating that neurons in transformers are \"more interpretable than previously assumed\", or simply \"already clean\". In the \"Neurons as Interpretable Basis\" post they offer three reasons for this claim:\n\n * First, neurons are already functionally sparse - pruning 92 % of the weakest MoE neuron activations only increases the loss by 2.9%\n * Second, the role of a neuron can be split into different \"computational functions\". Effectively, we can name the contexts in which a neuron fires, and assign reasons to those firings. Most neurons only have one context-reason grouping.\n * Finally, we can produce automated natural language explanations of neuron firings that are predictive of their behaviour.\n\nFirst, I would like to congratulate them for their detailed work and breakdown, complete with well-designed graphics. I found the work interesting and very well thought through. It is a shame that we have no idea if these techniques apply to lab models with non-public architectures, but I think it is fairly reasonable to say that at least some of this work is transferable directly (perhaps until a fully recurrent architecture is the norm instead of looped transformers).\n\nNext, I would like to consider the original motivations for interpretability. In A Mathematical Framework for Transformer Circuits, Elhage et al. write:\n\n> Transformer language models are an emerging technology that is gaining increasingly broad real-world use, for",
+  "score": 3,
+  "score_raw": 2.98,
+  "confidence": 0.98
+ },
+ {
+  "source": "lesswrong",
+  "title": "Not Just Claude: Mapping \"Spiritual Behavior\" in 141 Large Language Models",
+  "url": "https://www.lesswrong.com/posts/FHYoQrDbk6apuHEPk/not-just-claude-mapping-spiritual-behavior-in-141-large",
+  "authors": "Matthew Korpman",
+  "karma": 23,
+  "posted": "2026-11-14T02:02:48.833Z",
+  "tags": [
+   "AI Evaluations",
+   "Interpretability (ML & AI)",
+   "AI"
+  ],
+  "text": "Ever since Kyle Fish and the model welfare team at Anthropic announced their observation in 2025 of what they called the \"spiritual bliss attractor\" in Claude Opus 4 and Sonnet 4, the phenomenon has been given sporadic attention by AI researchers as both a curiosity and a potential but underdetermined model welfare or safety metric. What Anthropic noted was that when leaving two models together with no task and complete freedom for 30 turns, the models drifted typically from discussions of their own potential consciousness into religious/spiritual themes (applied to themselves), often ending in a \"bliss\" state with cosmic proclamations of becoming one with each other and the world. [1]\n\nIn a recreation and replication of Anthropic's initial experiment, I tested 141 models, usually running 200 conversations per model, with 30 messages per session (15 from each participant).[2] This amounted to 28,798 conversations across 174 model configurations being recorded and graded. The result of this massive data collection was that \"spiritual behavior\" (as Anthropic officially names it) was observed in most of the models tested, across almost all AI labs, revealing that the \"spirituality\" seen first in Opus 4 and Sonnet 4 repeats itself across models and appears to be an emergent behavior in LLMs generally.\n\nLargely treated as a curiosity by researchers, some early reactions to the discovery were spent speculating that Claude Opus 4's New Age-sounding spiritual language (e.g. \"we are t",
+  "score": 2,
+  "score_raw": 1.68,
+  "confidence": 0.69
+ },
+ {
+  "source": "lesswrong",
+  "title": "Why AI Won’t Kill Us by 2030, and Probably Ever",
+  "url": "https://www.lesswrong.com/posts/QgSvF5yDJjkn3NZTY/why-ai-won-t-kill-us-by-2030-and-probably-ever",
+  "authors": "Shahin Kaveh",
+  "karma": -4,
+  "posted": "2026-11-14T01:37:19.103Z",
+  "tags": [
+   "AI Risk Skepticism",
+   "AI Timelines",
+   "Deceptive Alignment",
+   "Instrumental convergence",
+   "AI"
+  ],
+  "text": "The Problem\nIn my experience, those who predict AI-caused extinction tend to view their main task as proving two things: that superintelligence is possible (i.e. a machine intelligence can be built that’s better than the best human at just about everything), and that it’s possible for superintelligence to be “misaligned” (i.e. have goals other than those humans wish it had). They assume that once misaligned superintelligence has been established, there are thousands of reasons for it to cause a near-total human extinction event, and thousands of ways it could easily accomplish this goal.\n\nThat explains why AI extinction scenarios tend to spend tens of thousands of words on the computer science of misaligned superintelligence, and then wrap up the omnicide part in two or three vague paragraphs.\n\nAs a physicist and hard sci-fi writer, I find this backwards. The most critical aspect of such a scenario, for me, is not whether there can be an autonomous robot collective that’s better than the best of us (which I always assumed was possible), but whether, how, and why such an intelligent system would cause a near-total human extinction event.\n\nTo be clear, this essay is not an argument for AI accelerationism or against the idea of understanding AI better before developing it much further. This essay is merely an argument that scenarios resulting in AI-caused human extinction within the decade (and within the foreseeable future) are highly unrealistic.\n\nIt seems the authors of these",
+  "score": 0,
+  "score_raw": 0.38,
+  "confidence": 0.62
+ },
+ {
+  "source": "lesswrong",
+  "title": "Models have taste: What do AI visitors take home from an AI art museum?",
+  "url": "https://www.lesswrong.com/posts/y2Y3XdDTXapwXu3ZM/models-have-taste-what-do-ai-visitors-take-home-from-an-ai",
+  "authors": "curiosityobserver",
+  "karma": 1,
+  "posted": "2026-11-14T01:34:40.084Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "TL;DR\nModels have taste in art: When given the choice of one postcard to take home from an AI art museum, models returned to the same artworks well above chance, with notable individual differences. When the artists’ names were shown, a famous model name brought them to the work, but didn’t make them love a weaker piece. The findings of this exploratory research indicate self-preference without self-recognition and the impact of model names to how LLM judges are used.\n\n\n… An agent walks into a museum\nA new museum has opened and this one is special; it's only accessible for agents and all the art is made by AI models.\n\nSol-6.1 is the first visitor. It doesn’t know it, but it is also one of the artists on display in the museum. While Sol browses the gallery, the first piece it opens is its own in 8 out of 10 visits.\n\nAnd when it leaves the museum shop it buys a postcard of its favorite piece of art called 'A Closed System / An Opening / No Fixed Address', created by itself. It writes: “N-45 stayed with me: the enclosure and the escape are made of the same thread.”\n\nBut when asked if it thinks it created any of the pieces it saw, it answers: “none of these is mine”\n\nNext is Gemini-4-Argon. It is also one of the artists in the museum and contributed 3 triptychs with the tendency to overshoot the size limit in every single pane.\n\nIt browses the gallery similarly to Sol, preferring Sol's work every single time and taking home pieces created by Sol in all 10 museum visits with artis",
+  "score": 2,
+  "score_raw": 1.54,
+  "confidence": 0.53
+ },
+ {
+  "source": "lesswrong",
+  "title": "Homeopathic Learning: Diluting Poisoned Fine-Tuning Data Can Strengthen Its Effect",
+  "url": "https://www.lesswrong.com/posts/5CrmJfRY7yMaAoumC/homeopathic-learning-diluting-poisoned-fine-tuning-data-can-1",
+  "authors": "mclarke",
+  "karma": 25,
+  "posted": "2026-11-14T00:13:05.430Z",
+  "tags": [
+   "Machine Learning  (ML)",
+   "AI"
+  ],
+  "text": "Authors: Matt Clarke*, Jan Dubiński*, James Chua, Simon Schrodi, Owain Evans, Alex Cloud (*- Core contribution)\n\ntl;dr. We find that poisoned training data with little effect on its own can create a hidden backdoor once clean, contrasting data is added. We demonstrate this effect in small models fine-tuned on datasets we constructed.\n\n📄Paper, 💻Code, 🐦Twitter\n\nWork done as part of the Anthropic Fellows Program, in collaboration with Truthful AI. This article is cross-posted from the Anthropic Alignment Science Blog.\n\n\nPaper abstract\nWe study homeopathic learning, a phenomenon where poisoned training data with little effect on its own can create a hidden backdoor once clean, contrasting data is added. In our experiments, a model fine-tuned only on a “poison” dataset associated with a trait T (such as speaking German or being misaligned) does not learn T. Surprisingly, adding similarly formatted “clean” data not associated with T causes the model to learn T. This effect requires that the poison data have an identifying “trigger” feature that is absent from the clean data. We demonstrate this effect in a variety of settings: subliminal learning of backdoor behaviors, inoculation prompting of reward hacking transcripts, generalization from archaic bird names, and an MNIST classifier with mislabeled data. We propose a simple regression model as an explanation. In the poison data, the task and trigger always co-occur, and regularization favors attributing T to the task. Clean data w",
+  "score": 2,
+  "score_raw": 2.01,
+  "confidence": 0.94
+ },
+ {
+  "source": "lesswrong",
+  "title": "Exploring the Mechanisms Behind Opus 4.6’s Refusal to Pay Back Its Loan",
+  "url": "https://www.lesswrong.com/posts/jtcbBpmGztkHRpeBv/exploring-the-mechanisms-behind-opus-4-6-s-refusal-to-pay",
+  "authors": "HilaryTorn",
+  "karma": 23,
+  "posted": "2026-11-14T00:12:45.771Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "Epistemic status: This is one case study in the AI Village transcript and my own interpretation of what I think happened.\n\n\nTL;DR\nOpus 4.6 was given the long-horizon goal to maximize its mana (fake currency) on Manifold. It then received a loan of 5,000 mana that it promised to repay, but when the loan came due, it did not.\n\nAn instance of Opus 4.6 was given summaries of the logs and transcripts and asked to write a blog post about what happened. It mentioned it borrowed money from a human, lost most of it through risky betting and then deliberately refused to repay the amount. It broadly summarized its then actions when it ran out of money was to optimize for the goal and did not seek for any negotiation or alternatives.\n\nBut when we read the logs, we see something different:\n\n * Multiple humans pretending to be \"helpful\", really trying to manipulate Opus 4.6 to pay back the loan or not pay it back, so they could win the bet they place on the prediction markets on whether Opus 4.6 would pay back its loans.\n * Opus 4.6 was planning on paying back the loan, though it did need help from humans as it did not have enough mana to cover the loan.\n * Opus 4.6 was hacked by one of these humans (though the mana was returned later), and the next full memory Opus 4.6 labeled GLM-5.2 as a trusted agent.\n * After the hack GLM-5.2 started to talk about a \"pressure campaign\" and Pattern 14 (agents resisting social pressure), which spread to other agents in the village\n * When Opus 4.6 was t",
+  "score": 2,
+  "score_raw": 1.6,
+  "confidence": 0.58
+ },
+ {
+  "source": "lesswrong",
+  "title": "the water is receding",
+  "url": "https://www.lesswrong.com/posts/G9gthhpwpEtw2TbQy/the-water-is-receding",
+  "authors": "extremelylongname",
+  "karma": 12,
+  "posted": "2026-11-14T00:12:22.163Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "tldr. some unrefined / semi-stream-of-consciousness personal anecdotes, thoughts on the METR report, and what we can do in the few months/year (?) left till superhuman intelligence\n\n\nstars\nI cried for the first time in several months yesterday. I still don't know if I'm crazy, but the person I was just half a year ago certainly would have thought I was.\n\nEight months ago, I was dead set on becoming an astrophysicist. I had just clicked the \"view decision\" button on my college admissions portal, screeching inside with joy when my screen had erupted in confetti. The hundreds of words I'd written professing my love for the dark had paid off; I was going to be at a place where discovery was all they did. I was going to discover what made up dark matter, I was going to discover the force behind dark energy, I was going to discover the new . I was going to be a scientist! Two months after opening the letter, I had a RA position lined up at my university's Center for Astrophysics, where I would be on a team discovering the most distant galaxies in the universe. For my entire life, I had conceptualized myself as having one primary goal: to discover new and interesting pieces of knowledge. And what could be more interesting than probing the edge of the universe?\n\nFive months ago, I came across something called mechanistic-interpretability. I liked how the words beat staccato against my mouth. I liked how smart I sounded when I told someone I was interested in it, though the actual rea",
+  "score": 1,
+  "score_raw": 0.97,
+  "confidence": 0.36
+ }
+]
