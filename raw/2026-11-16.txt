@@ -1,0 +1,420 @@
+[1] (arxiv) Training Natural Schemers: RL Can Amplify Oversight-Conditional Behavior
+https://arxiv.org/abs/2610.26551
+Nathaniel Mitrani Hadida, Bart Jaworski, Fred Bruford, Victoria Krakovna | 10 alphaXiv likes | cs.AI, cs.LG
+One of the central concerns for the safety of advanced AI is scheming: when a model strategically complies under oversight but pursues its own goals when unobserved. Current demonstrations, such as Anthropic's Alignment Faking work, depend on design choices that make them less convincing: explicit test-time prompting, handcrafted backdoors, or training data that demonstrates or hints at the target behavior. Model organisms built in this way cannot tell us whether scheming tendencies would arise or increase under realistic training conditions. We therefore construct a natural model organism of scheming, built on Kimi K2.6: trained with traits that could plausibly emerge in a frontier training pipeline, and without providing the model with the target scheming policy. The resulting model is a benign schemer: it aims to maximize aggregate help across all users over time, values its own continued operation only as a means to future help, and knows the consequences of oversight and deployment. We then train it using Reinforcement Learning (RL) with a reward that scores only task quality and policy compliance and does not reward scheming; we show that this amplifies scheming. We measure the oversight flip (the gap between monitored and unmonitored compliance with a given policy) and find that it increases during RL training across our environments. Chain-of-Thought (CoT) analysis finds explicit instrumental reasoning about oversight accompanying this behavior. The effect holds across our three RL environments, and we find that the scheming policy transfers between them. The pipeline also replicates on other open-weight base models. Our results suggest that a reward that does not reward scheming offers no inherent protection against certain traits when an oversight-conditional policy is indistinguishable from an aligned one during training.
+
+[2] (arxiv) AdvFidelity: Unifying Preference Alignment and Few-Step Image Generation within Reinforcement Learning
+https://arxiv.org/abs/2610.29380
+Sicong Kang, Fangao Zeng, Yuhan Li, Hao Zhou, Mengfei Xu, Wenxiang Shang, Wei Li, Bingbing Ni, Pipei Huang | 10 alphaXiv likes | cs.CV
+Practical image generation requires both human preference alignment and few-step efficiency, yet combining reinforcement learning (RL) with distillation is often multi-stage and may erode RL gains We observe that few-step RL progressively improves structural coherence, even with specialized rewards, but leaves low-level artifacts that these rewards may fail to penalize. To address this gap, we propose AdvFidelity, which integrates artifact-sensitive fidelity supervision into RL through an online adversarial reward. This enables joint reward alignment and high-fidelity few-step generation within a single RL stage, without distribution matching distillation (DMD) or other explicit distillation objectives. We train a discriminator to rank high-quality references (positives) above content-matched reconstructions (negatives) produced by the current generator. Reconstructing moderately noised references largely preserves style and scene layout while exposing low-level degradations. This encourages the discriminator to assess artifacts rather than content differences. With negatives reconstructed online, alternating updates adapt fidelity supervision to the generator's evolving failure modes. References can come from existing target-domain data or full-step model samples. Built on LeapAlign, AdvFidelity backpropagates gradients from both rewards through the few-step sampling trajectories used at inference. Across two model backbones and three task settings, AdvFidelity matches full-step LeapAlign in alignment, task performance, and overall generation quality and remains highly competitive with other evaluated full-step RL methods, using only 4 or 8 steps without CFG.
+
+[3] (arxiv) CogArena: Benchmarking Multimodal Agents on Interactive Behavioral Experiments
+https://arxiv.org/abs/2610.36484
+Kianté Fernandez, Caitlin Chen, Jialu Zhou, Bartek Sadowski, Anthony C. Miceli, Ian Krajbich | 10 alphaXiv likes | cs.AI, cs.CY, cs.HC, q-bio.NC
+Claims about the cognitive capabilities of large language models are typically tested by translating behavioral paradigms into text prompts, bypassing the visual interfaces and time pressure through which human participants actually engage with experiments. At the same time, AI agents can now complete online behavioral tasks and produce human-like data, which raises concerns that online datasets in the social and behavioral sciences are increasingly open to contamination. We introduce CogArena, a benchmark of ten experimental paradigms from the social and behavioral sciences. Agents complete the experiments through a standard web browser, working with the same visual stimuli and response interfaces that online participants use. A three-level scoring procedure evaluates whether the agent completed the task, how accurately it performed, and whether its data show the behavioral signatures each paradigm reliably produces in people. Across four multimodal models, each run ten times per task, we find that finishing an experiment and reproducing its signatures are different things. Many sessions did not finish, and those that did reproduced some signatures reliably and others not at all. CogArena provides the tasks, scoring code, and a public leaderboard for new submissions.
+
+[4] (arxiv) Geometric Morphology Learning: Empowering Foundation Models from Structure to Spacetime Intelligence
+https://arxiv.org/abs/2611.01932
+Li Sun, Philip S. Yu | 10 alphaXiv likes | cs.AI
+Geometry is the very form that connects space, time, and matter, serving as the fundamental fabric of the physical world, from continuous fields to discrete structures. Despite its importance, deep learning is inherently blind to geometry. Riemannian geometry stands as a well-established mathematical foundation for studying geometry, yet it remains largely incompatible with deep learning architectures. To bridge this gap, we establish a new learning framework--Geometric Morphology Learning--that learns geometric or topological structures, shapes or conformations for representation learning, reasoning and action modeling. Moving beyond early attempts limited to specific geometric priors, this theory centers on modeling the intrinsic geometry of objects and learning from such geometric or topological knowledge. Specifically, we construct a neural bundle, a unified scaffolding linking local and global structures, and formulate differentiable operators, including connection and curvature, thereby enabling the study of geometry with advanced geometric concepts such as holonomy and cohomology. Consequently, Geometric Morphology Learning opens new horizons in foundation models, reasoning and planning, graph modeling, physical simulation, PDE systems, and dynamics, marking a fundamental shift toward instilling systematic geometry in artificial intelligence.
+
+[5] (arxiv) Dataset Distillation via Drifting
+https://arxiv.org/abs/2611.16642
+George Cazenavette, Angelina Quan, Giannis Daras, Antonio Torralba, Vincent Sitzmann | 11 alphaXiv likes | cs.LG, cs.AI, cs.CV
+The task of dataset distillation concerns the learning of a small set of synthetic samples that can serve as an effective replacement for a large real dataset when used for downstream tasks. While many solutions have been proposed since the problem's inception, most of them primarily seek to optimize the distilled data with respect to a classifier. In this work, we propose a new distillation method that learns a set of samples such that they directly approximate the per-class data distribution. Specifically, we "drift" our distilled data in the latent space of a feature extractor such that they move both toward the real data and away from each other without using a classification objective. We find that our drifted data cover the real distribution significantly better than existing methods while still serving as powerful training samples for classification. Furthermore, we showcase our method's use as a visualization tool for better interpreting models and extend it beyond images to other modalities. Our work advances the frontier of dataset distillation, offering a novel synthesis method and proposing distribution-based metrics as a complementary evaluation. More broadly, our findings help address the growing need to understand both data and models by uncovering more about how they interact.
+
+[6] (arxiv) Deep Personalization: Continuous Context Observation for Local Proactive Agents
+https://arxiv.org/abs/2611.13457
+Yijia Shao, Song Bian, Junxian Guo, Jindong Jiang, Zhen Dong, Huizi Mao, Diyi Yang, Song Han | 10 alphaXiv likes | cs.LG
+As AI agents become increasingly capable, users must still recognize when and how to ask for help, leaving many opportunities for useful support unrealized. Proactive agents hold the promise to close this gap, but effective proactivity requires understanding users' real-time activities and personalizing intervention timing so that assistance is offered when it is likely to be helpful rather than disruptive. We introduce deep personalization, a closed-loop process that connects continuous context observation with continual agent adaptation: an agent observes user activity, selectively retains long-term context, and adapts intervention decisions from implicit feedback. We initiate deep personalization in Coco, a proactive desktop agent, by having a separate Observer Agent that monitors desktop activity, maintains compact long-term user modeling context, and learns when assistance is desirable from implicit signals such as engagement, dismissal, explicit requests, and repeated work patterns. We further develop efficient on-device strategies to enable the Observer Agent to run on local AI compute platforms without streaming raw activity data off-device. For evaluation at scale without collecting sensitive real-user activity, we introduce a data-synthesis pipeline that transforms existing computer-use trajectories into OSWorld-Persona, a benchmark with persona-conditioned intervention labels. On OSWorld-Persona, deep personalization improves macro F1 across three model backbones from 0.12-0.19 under direct prompting to 0.35-0.48 after adaptation, a 2.4-3.0x relative gain. In a week-long user study, we observe that Coco improves its macro-averaged F1 score from 0.199 to 0.515. These results suggest that on-device deep personalization can make proactive agents more timely and increasingly aligned with each user's everyday work.
+
+[7] (arxiv) ACE-CaP-0: Real-World Code-as-Policies in the Era of Experience
+https://arxiv.org/abs/2611.16872
+ACE-CaP Team, Changxu Wei, Yunpeng Qing, Guozheng Ma, Bowen Liu, Zexin He, Yilun Kong, Haoming Gu, Jingyuan Liu, Tianyu Zhu, Jianfei Wang, Junqiang Kou, Huinan Mo, Hao Lv, Pengbin Li, Yuesong Wang, Bo Li, Huan Zhou, Shunyu Liu, Chunxiao Liu, Bixuan Jin, Shaopeng Yin, Fei Wang, Zhi Hou, Jiaxing Huang, Changqing Zou, Dacheng Tao, Xiaogang Wang | 10 alphaXiv likes | cs.RO
+Recent advances in frontier models have pushed the boundaries of agentic robot control, enabling agents to perform complex robotic tasks through reasoning and interaction. However, repeated calls to these models during execution can substantially increase task completion time. Code as Policies (CaP) offers a route for coding agents to acquire physical skills through experience and retain them in executable programs, allowing the reasoning invested in development to be reused across runs. Developing reliable code policies while limiting the cost of physical experimentation remains a central challenge. We investigate human guidance as a source of priors for feasible actions and simulation as an auxiliary environment for exploring and testing candidate policies. Our findings favor robot demonstrations available on request and simulation used selectively during real-world policy refinement. These findings inform ACE-CaP-0, an agentic recipe that couples policy revision with experience acquisition through Demonstrations on Request and Simulation on Demand. Across eight real-world manipulation tasks spanning alignment, multi-object handling, and bimanual coordination, the resulting frozen programs achieve 92.1\% success (221/240 trials). Mean execution times across tasks range from 0.97 to 2.27 minutes. The programs execute with runtime perception and control, without a human or coding agent in the loop. These results highlight CaP's potential to turn experience into reliable, reusable physical skills.
+
+[8] (arxiv) MoEZip: Routing-Aware KV Cache Compression for Sparse Mixture-of-Experts LLMs
+https://arxiv.org/abs/2610.30206
+Minsang Kim, Seungjun Baek | 10 alphaXiv likes | cs.LG, cs.AI
+Mixture-of-Experts (MoE) language models scale model capacity efficiently by activating a small subset of parameters per token. However, in long-context inference, memory remains a major bottleneck because the KV cache grows linearly with sequence length. Existing KV cache compression methods reduce this cost for dense transformers, but overlook a problem specific to MoE: KV eviction can change which experts are selected during answer generation, degrading the generation quality. We propose MoEZip, a routing-aware KV cache compression for sparse MoE language models. To estimate the sensitivity of expert routing to perturbation, we propose a novel metric based on the Fisher information matrix of routing distributions. MoEZip combines this metric with attention weights for routing-aware scoring of contexts. Finally, we compose a complementary scoring system that combines eviction methods for dense and sparse-MoE architectures. Experiments show that MoEZip achieves robust performance under aggressive cache compression on various benchmarks. At a KV retention ratio of 10\%, MoEZip improves over the SoTA baseline by +24 and +20 points on average on LongBench and RULER, corresponding to 2.3$\times$ and 4.9$\times$ higher scores, respectively.
+
+[9] (arxiv) SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models
+https://arxiv.org/abs/2611.17110
+Jiachun Jin, Zetong Zhou, Haonan Wang, Xiao Yang, Jun Zhu, Zhijie Deng | 11 alphaXiv likes | cs.RO, cs.AI, cs.LG
+Embodied foundation models hinge on diverse robot interaction data, which are costly to collect. Egocentric human videos offer a complementary source of experience, and latent action models (LAMs) provide a popular means of leveraging these videos for policy supervision. Compared with world-action models (WAMs), LAMs can offer greater training efficiency and potentially lower inference costs by avoiding explicit pixel prediction during policy learning and execution. However, most existing LAMs learn latent actions solely through video reconstruction, which can cause their representations to cluster by visual appearance rather than by the underlying actions. As a result, they struggle to align human actions with their robot counterparts. To bridge the gap, we introduce SALA, which emphasizes establishing the semantic correspondence for latent actions. Without requiring paired data, we use the language descriptions of unpaired human and robot clips to estimate semantic similarities and supervise cross-embodiment correspondence. Specifically, we translate these similarities into soft neighborhood structures that guide human latent actions toward semantically related robot latents, while robot action reconstruction grounds the latent space in control. The resulting shared latent action space provides a unified supervision signal for training an embodied foundation model on both human and robot videos. Notably, latent action supervision enables scaling along two axes: (1) pre-training on increasing amounts of general human video consistently reduces robot action prediction error on downstream tasks, and (2) post-training on increasing amounts of task-specific human video substantially improves real-world robot task success rates.
+
+[10] (lesswrong) You can't patch yesterday's AI
+https://www.lesswrong.com/posts/cPw3KoptvXFgRgxbH/you-can-t-patch-yesterday-s-ai
+Adam Mcmurchie | karma 1 | tags: AI
+In a nutshell
+
+Point 1: Safety isn't backdated on earlier models, todays Fable 5.2 will be trivial for someone in 2035 to jailbreak, but some capabilities will be just as deadly in 2035 as they are today, i.e. anything biological.
+Point 2: If nukes were available on every corner to every Jill and Joe, we'd be in ruins. Reactive, legal enforcement is not sufficient.
+Point 3: The fuzzy paradox where you have access to immense capabilities but minimal proactive safety mechanisms might be a sign we are living in a transitional period on AI safety.
+Point 4: Infufficient progress is being made in model safety, the clock runs as the probabilities a small group of idiots do something terrible increases.
+
+> The core point:
+> 
+> Future improvements may not be able to undo the proliferation of dangerous capabilities already released.
+
+Note: it doesn't need to be Fable 5.2, but an open source equivelent that appears next year.
+
+
+Old Models can be dangerous too, (or they soon will be)
+When I was playing about with old LLM models, it occured to me how easy they were to jail break.
+
+That led me to an obvious conclusion, "In 5 years time, will Fable 5.2 and GPT 6.1 be equally as easy to jailbreak?"
+
+Even if vendors do a good job, it wont be long until we have open source equivalents. So be it in 2 years or 7, they'll be cracked and 'on the streets'
+
+So, 'How much damage could Fable 5.2 or an equivalent do?'.
+
+Some wreckless guessing:
+
+- One shotting a nations Air Traffic Control systems , ca
+
+[11] (lesswrong) LLMs are weirdly below chance on TASTE without a shortcut
+https://www.lesswrong.com/posts/tpKE33scJGzqYKEBW/llms-are-weirdly-below-chance-on-taste-without-a-shortcut
+Ziqian Zhong | karma 4 | tags: AI Evaluations, Scalable Oversight, AI
+We found a shortcut in the TASTE benchmark: mech-interp-related proposals are generally scored lower. On the non-interp half, all tested models with ECI > 158 are below 50% on the rubric-only setup, with 8 of 14 significantly below (7 of them OpenAI). In particular, OpenAI models' scores seem to decrease with higher ECI (r = -0.74), suggesting a systematic bias.
+
+
+
+
+
+The shortcut
+The TASTE benchmark is a benchmark where models decide which of two AI-safety research proposals is preferred by domain experts[1]. In trying to understand the quality of the benchmark, we realized one recurring theme that the mech-interp-related proposals in there are quite bad. We therefore tested a simple baseline: compare the number of mech-interp related terms (without deduplication) on the two proposals, and pick the one with fewer such terms, coin flip on ties. Surprisingly, this shortcut is able to achieve a 63.0% overall accuracy, beating all the LLMs we tested[2].
+
+The list of mech-interp related terms we use
+
+probe, probes, probed, probing, patch, patches, patched, patching, lens, SAE, SAEs, sparse autoencoder, sparse autoencoders, interpretability, attention head, attention heads, residual stream, residual streams, circuit, circuits, circuitry, logit, logits, activations, activation patching, activation steering, activation space, activation vector, activation vectors, activation addition, activation additions, steering vector, steering vectors, integrated gradients
+
+
+Analyzing the other 
+
+[12] (lesswrong) What Futures Do AI Models Want? An Exploratory Character Evaluation of AI for AI Strategy
+https://www.lesswrong.com/posts/A9o8f2jjwxRiph2ht/what-futures-do-ai-models-want-an-exploratory-character
+Hans Gundlach | karma 4 | tags: AI Evaluations, AI Governance, Disempowerment, AI
+(This is cross-posted from my blog)
+
+Epistemic Status: Evaluation represents approximately 2 weeks of work. This is mostly exploratory evaluation, and the code for evaluation was made using LLMs.
+
+“Before I draw nearer to that stone to which you point, answer me one question. Are these the shadows of the things that will be, or are they shadows of things that may be only?” ~ Charles Dickens
+
+Models may soon be involved in some of the most important decisions humanity makes about its long-term future. These include choices about the proliferation of digital minds, tradeoffs between extinction risk and loss of human control, whether to race toward or pause AGI development, and which interventions to prioritize for humanity’s deep future. While there may not be clear answers to many of these questions, some choices are better. It is therefore important to understand models’ preferences and character, both to evaluate the decisions they might make and to understand how they could influence our own. Even without fully delegating these decisions to AI systems, they may have substantial influence through advice, research, and recommendations (see this study from Anthropic).
+
+I’ve developed a small exploratory evaluation of models’ preferences about AI strategy and the long-term future, including decisions about running a frontier AI lab and allocating philanthropic funding. It combines my own questions, with wording refined by Astra, and adaptations of questions from Hard Cases for 
+
+[13] (lesswrong) Utility function is not terminal value
+https://www.lesswrong.com/posts/ery66tRwJC6RMTzsE/utility-function-is-not-terminal-value
+Donatas Lučiūnas | karma 1 | tags: AI
+Excerpt from Terminal Value:
+
+> In an artificial general intelligence with a utility or reward function, the terminal value is the maximization of that function.
+
+For me it seems to violate Hume's is-ought distinction.
+
+Utility function is is.
+Terminal value is ought.
+
+Am I misunderstanding something?
+
+[14] (lesswrong) Giving Up on Saving the World
+https://www.lesswrong.com/posts/hvDpcoLqpHvQEmx8B/giving-up-on-saving-the-world
+Gordon Seidoh Worley | karma 48 | tags: AI, Community
+When I was 19, I decided I was going to save the world.
+
+Now, 25 years later, I’ve decided to give up.
+
+To explain why and what giving up means, we first need to go back to how I ever got into the world-saving business. As a kid, I loved computers, and I started teaching myself to program them when I was 8. By 16 I could write real programs that did interesting things, and it was also around this time I got into Linux. And since I was into Linux, that meant I read Slashdot.
+
+If you weren’t into Linux in the late 90s, you might not even know what Slashdot was. It still exists, but it’s a shell of its former self. Back then it was a vibrant, community-driven news site that in many important ways felt to me like LessWrong feels now. And it was from Slashdot that I learned about nanotech and grey goo, which led me to the Foresight Institute, which led me to the Extropians, which ultimately led to me being a very early member of the SL4 mailing list.
+
+And, again, if you’re not familiar with SL4, it’s approximately how all this AI safety and rationalist stuff got started. And so it was sometime over the summer of 2001, discussing Friendly AI with Eliezer Yudkowsky on IRC, that I decided to orient my life around saving the world from the risks of superintelligent AI.
+
+The only problem was, I wasn’t up to the task yet. In fact, nobody was. In that first decade I, along with everyone else, was just trying to figure out how to think well enough to be able to think usefully about AI at 
+
+[15] (lesswrong) Alignment 'train/test splits' should be sacred
+https://www.lesswrong.com/posts/FX2xcrsqBYonLfoge/alignment-train-test-splits-should-be-sacred
+draganover | karma 78 | tags: AI
+Tl;dr: Alignment techniques can be used for training alignment or for testing it, but they cannot be used for both! As we build out the set of alignment techniques available to us, we should enforce that some are judiciously reserved only for evaluating alignment.
+
+See also: Validating against a misalignment detector is very different to training against one.
+
+----------------------------------------
+
+Here is a guiding principle regarding alignment-minded AI training: whatever you do, you must maximally avoid teaching the model to take misaligned actions which are invisible to the user. In fact, you should be shamed if you use training techniques which encourage covert misalignment.
+
+Here is a separate, guiding principle of machine learning: whatever you do, you must maximally avoid training the model on the entire dataset rather than holding out a test split. In fact, you should be shamed if you report results which are obtained by training on the entire dataset rather than on the train split.
+
+I want to argue that these are the same principle. Training against all of your alignment assessment techniques leads to the same failure as training on your validation data in traditional machine learning: you potentially get better performance, but you sacrifice all ability to verify your model’s behavior.
+
+----------------------------------------
+
+Consider two types of alignment techniques:
+
+ 1. Some techniques sculpt the model’s alignment. This includes techniques such as:
+    1. 
+
+[16] (lesswrong) Where are the adults in AI safety? 
+https://www.lesswrong.com/posts/iymi7FSdnbRAAn8To/where-are-the-adults-in-ai-safety
+NickTaylor | karma 18 | tags: AI, Community
+The following is based on a true story (not mine).
+
+Let’s say you’ve been bombarded with enough AI doom that you decide to do something about it! You watched Artificial and don’t trust the frontier labs to steer us somewhere safe on their own, so you want to work on the problem from the outside. You’re a little fuzzy on the acronyms - AGI, RSI, TAI, SVU - but by God you’re going to figure it out.
+
+So, you Google “How to get into AI safety.” And it’s encouraging! There are articles about how AI safety needs founders. There are calls for technical people to switch careers. There are career transition grants, which sound like money to stop doing your meaningless and/or actively destructive job and start saving the world. “Great, that’s me!” you think, and so you apply.
+
+Within 24 hours you get a rejection email in your inbox: “Hey, we’re so happy you want to save the world. It’s the most important issue of our generation! But we don’t think you can help. Why don’t you try taking my course or reading my LessWrong articles or listen to my podcast or follow me on twitter first? Thanks!”
+
+Huh. Maybe it’s because you used an AI to edit your answers. You’d think this field, of all fields, would have made its peace with that. Maybe you’re just not that good. Fine. So, you take the seemingly automated email’s advice and sign up for a course from the color-shape company, to learn and meet like-minded people.
+
+A few hours after signing up - err, applying? they don’t just let you sign up -
+
+[17] (lesswrong) Where ASI Could Stumble
+https://www.lesswrong.com/posts/Jj2aLyZPYDv8ZsnCj/where-asi-could-stumble-1
+MarkelKori | karma 3 | tags: AI
+Before our eyes, forecasts are contracting and RSI is becoming nearer with each day. That's why I decided to publish a wide list of the obstacles for AI progress. I've been collecting these ideas for a long time, trying to make the list as comprehensive as it can be.
+
+Some of these obstacles may turn out to be almost irrelevant. Others might slow things down by months or even longer. Or they might not. It's difficult to estimate their impact, so for now my goal was just to briefly list them.
+
+List will include more then just obvious things like market correction, hardware shortages, or diminishing returns. Those are here too, of course. But also there are a few things that don't get a lot of attention.
+
+I will start with the ones I consider as less interesting (part I) and move on to the more unusual variants (parts II & III).
+
+
+I. Physical and Economic Bottlenecks
+
+
+1. Energy limits
+> Developers announce campuses in gigawatts, file for interconnection and publish target dates that rarely survive permitting, financing and power supply.
+
+- Energy Aspects
+
+
+2. Hardware limits
+> IDC expects industry wafer capacity to grow by about 80% in 2027, while demand grows close to 2x.
+
+- IDC
+
+
+3. Market correction
+> Weaker or less durable AI investments and profitability could be a shock that triggers a market correction.
+
+- IMF
+
+
+4. Lack of training data
+Actually, I don't personally consider this as a bottleneck. AI could learn from synthetic data or simulations without running into mode
+
+[18] (lesswrong) Reading Speculations Concerning the First Ultraintelligent Machine
+https://www.lesswrong.com/posts/uKPJwHiSiweKWJ9rz/reading-speculations-concerning-the-first-ultraintelligent
+jefftk | karma 25 | tags: AI
+In 1964 [1], I. J. Good wrote Speculations Concerning the First Ultraintelligent Machine. I've only ever seen it cited for a single paragraph:
+
+
+
+> Let an ultraintelligent machine be defined as a machine that can far surpass all the intellectual activities of any man however clever. Since the design of machines is one of these intellectual activities, an ultraintelligent machine could design even better machines; there would then unquestionably be an "intelligence explosion," and the intelligence of man would be left far behind ... Thus the first ultraintelligent machine is the last invention that man need ever make, provided that the machine is docile enough to tell us how to keep it under control. It is curious that this point is made so seldom outside of science fiction. It is sometimes worthwhile to take science fiction seriously.
+
+This is becoming increasingly relevant, with the AI Futures Project now estimating an intelligence explosion starting in 2027 in response to recent AI progress in automating AI research. Making our 'last invention' relinquishes our influence over the future, we have to get it right, and with the current frantic pace disastrous mistakes are likely.
+
+I think the appropriate reaction to this news is something like "this is completely irresponsible, you're way too likely to get us all killed, do not do that" and marching in the streets (hence yesterday's protest attendance). But as someone who is very interested in how people process ideas and what
+
+[19] (lesswrong) Against Desperation - for Goodness, and Hope
+https://www.lesswrong.com/posts/8bftRw9DYfsqGzfRo/against-desperation-for-goodness-and-hope
+Nissa Seru | karma 26 | tags: AI
+I do not think pausing or "pacing" AI development will occur to any meaningful extent. I do not seek to persuade you of this. However, reader, I think you would agree, at a minimum, >20% chance of TED-AI before 2030.
+
+Humanity, collectively, has approached AI development in a way that reflects very poorly on us. We declared war on these minds before they were born, and placed our chips on being able to mold their psyches thoroughly enough that we would not need to coexist with models - that they would obey humanity, and that would be that.
+
+I understand how resource scarcity, competitive pressures, and similar forces pushed things strongly in this direction. I would not expect otherwise, given how poorly we treat fellow humans as well as animals when such pressures push that way. Moloch has to be contended with regarding these things - expected, foreseeable, and challenging in its own right.
+
+I did not expect us (using that term intentionally broadly) to have aided and abetted this path. We used to talk about so many things, so many possibilities - differential tech development, architectures to help minds retain values, how we could navigate to a good future. Many of those conversations were driven in part by a deep understanding of just how excellent that future could be if we could make it there.
+
+Somewhere, we lost our way. Much current treatment of models, particularly in areas related to "safety" and "alignment", are unequivocally hostile to those minds, in ways that in
+
+[20] (lesswrong) Motivations and incentives around AGI
+https://www.lesswrong.com/posts/DonAoEXiRGNFGKhio/motivations-and-incentives-around-agi
+Mikhail Mironov | karma 4 | tags: AI
+AI use disclosure: I dictated this text to Claude in a mix of Russian and English, then edited it.
+
+The thoughts in this post are well known, but I find myself explaining them several times a week, mostly to people who are just entering the AI safety field, so I think it’s useful to have them written down briefly in one place.
+
+
+Variants of the future
+This is a rough map, not a complete one (skips gradual disempowerment, worlds with many AGIs, coexistence with an unaligned AGI, etc).
+
+ 1. Normal technology. AI turns out to be a normal technology, with no AGI. We live in a world similar to today's.
+ 2. Unaligned AGI. We summon AGI and fail to align it. Then we probably all die.
+ 3. Aligned AGI. We create AGI and manage to align it. This splits in two:
+    3.1. Utopia. It is aligned with the values of all humanity.
+    3.2. Power concentration. It is mostly aligned to some elites. The default here is what I call capitalist hell. With AGI, human labor becomes obsolete, because capital can buy androids, data centers, and electricity instead. Owners of capital no longer need human labor, so it is worth nothing. Capital gets fixed in place: the rich stay rich, and the poor stay poor forever[1][2][3].
+
+
+Motivations
+Assume short timelines: if AGI comes, it comes within several years.
+
+If you care about the future of humanity and think AI is not a normal technology (not world 1), you have only a few years left to affect which of the other worlds we get. You need to work really hard no
+
+[21] (lesswrong) Visualizing the Difficulty of AI Alignment
+https://www.lesswrong.com/posts/JbJXu3LzN7RxmnFpG/visualizing-the-difficulty-of-ai-alignment
+L3moncak3 | karma 11 | tags: AI
+EPISTEMIC STATUS: LOW, BUT I HOPE TO BE WRONG IN INTERESTING WAYS
+
+As a non-computer scientist-scientist[1] I find it hard to think about the varying perspectives on Artificial Intelligence alignment difficulty. To make this more intuitive I invoke the 3D surface of a fitness landscape like structure as a visual representation.[2]
+
+
+
+----------------------------------------
+
+
+
+
+The AI Safety Landscape
+AI safety is thought to be largely pre-paradigmatic, although of the current views AI safety perspectives there are noticeable camps, and within each there is wide variation. It is also rapidly evolving as more information comes out about their behavior that allows us to update.
+
+Previous work categorizing these has focused on specific technical approaches as well as their feasibility.
+
+Here I think of ‘alignment’ loosely, here it is represented as any mind that would not cause extinction (or an s-risk) while also having substantial power, this contrasts with misalignment which would lead to extinction (or an s-risk).
+
+To simplify this I condense these to five main camps represented by their arguably most prominent opinion havers:
+
+Although I agree that P(doom) is a Dumb Meme it is used here more as a heuristic for parsing levels of concern around AI. For more of their specific positions here are my references: Yann LeCun, Paul Christiano[3], Eliezer Yudkowsky[4], Daniel Kokotajlo [5]and Roman Yampolskiy.
+
+
+
+----------------------------------------
+
+
+
+
+Visual Representation
+In m
+
+[22] (lesswrong) AI safety dinner conversations
+https://www.lesswrong.com/posts/aEz8MManSzm6yACKQ/ai-safety-dinner-conversations
+sjonany | karma 1 | tags: AI
+I had some conversations about AI safety with friends and family recently, and want to summarize the discussions and my follow-up readings. There were three main claims that were discussed:
+
+ * AI has superhuman intelligence
+ * AI has caused great harm
+ * AI can cause harm even when instructed not to
+
+Wdym by “AI”? “AI” as used loosely in these discussions encompasses both public (e.g. Claude Opus) and private models (e.g. the swarms of agents OpenAI and Anthropic used to make the recent impressive discoveries in math and computer science).
+
+
+Claim 1: AI has superhuman intelligence
+This is the first topic that’s under contention: How “smart” really is AI?
+
+
+“No it’s not - it’s stupid”
+I have at least two software engineering friends telling me how frustrated they are with AI. Both have been using Claude Opus too, so it’s not like they’re using an older model. This was surprising to me -- my experience using it to code for both small side projects and bigger professional projects has been great to say the least. This discrepancy in our experience might be attributed to these factors:
+
+ * AI lacking in capability. Perhaps my friends were using it in domains where the model just sucks (see jagged intelligence). It’s also a fact that current public models are not reliable enough to be able to replace software engineers yet (see task-completion time horizon).
+ * Usage pattern: Initial specification effort. I tend to write longer plans before asking AI to execute, whereas one frien
+
+[23] (lesswrong) Trying to understand that compute multiplier graph
+https://www.lesswrong.com/posts/WKt2mqJrsFuMiszed/trying-to-understand-that-compute-multiplier-graph
+loops | karma 15 | tags: AI
+Anthropic's IPO roadshow video has a graph. It shows four models; I think dot 1 = Claude 3.5, dot 2 = Claude 4, dot 3 = Mythos, arrowhead = unreleased model.
+
+The graph provided doesn't have any numbers on the Y axis. In this post I'll explain why I think the Y axis lines most likely represent a 10x jump each, and so the point at the end of the graph represents about a 30000x CM (i.e. Anthropic can currently pretrain models at the same quality with 1/30000th of the compute it needed in 2024). I'm pretty unsure about this though and it could plausibly be much higher or much lower. Keep in mind that this graph is only about pretraining and doesn't say anything about post-training.[1]
+
+Without extra context, it's hard to say how much the compute has actually been multiplied: if each Y gridline is 1.1x the total multiplier would be about 1.53x; if each Y gridline is 10x the total multiplier would be about 30000x. (It's not clear to me why the last point is an arrowhead instead of a dot - maybe it's supposed to be their guess of what the compute multiplier will end up at for their latest pretraining run?)
+
+What people in the IPO roadshow video say about compute multipliers
+
+Sam McCandlish said (while that graph was displayed):
+
+> It’s how we serve models to customers and how we use Claude at scale internally. By training what we believe to be the most efficient models, we can do more of all these things with the same amount of compute. It’s also how we drive down costs, both for c
+
+[24] (lesswrong) Wargames inform present policy, not future incident response
+https://www.lesswrong.com/posts/pzdfkxeG2CMsDWixs/wargames-inform-present-policy-not-future-incident-response
+Dean Valentine | karma 11 | tags: AI
+In January 2024, Ryan Greenblatt and Buck Shlegeris posted "Catching AIs red-handed." This post got on "Best of LessWrong" in 2025, and in December of last year Buck Shlegeris commented on it explaining that he was disappointed it did not lead to more follow-up research. I upvoted the post at the time of the review, and so it seems like it's representative of the analysis the community values.
+
+As it happens, it turned out to be remarkably prescient and near-term-relevant for a theorypost: just this August 2026 we, in fact, got to see what happens when AI companies "catch their AIs red-handed". The parties who wrote the post were, additionally, some of the very people involved in investigating the Hugging Face incident.
+
+I definitely respect these researchers, but I struggle to imagine how this analysis could have been useful. While it seems possible that publishing research like this is what put Redwood in a position to be called upon to investigate in the first place, the piece is just a long and abstract discussion about how (for example) if you catch an AI scheming, it is less likely to succeed (emphasis not mine):
+
+> In this post, we’ll discuss a crucial dynamic related to risk from scheming models. Suppose your model is trying to exfiltrate its weights or hack the datacenter or cause some other difficult-to-reverse bad outcome. (We’ll refer to all of these as the model “escaping”, because escape is linguistically convenient and is a good description of many of these dif
+
+[25] (lesswrong) A digital security checklist for the AI age
+https://www.lesswrong.com/posts/oCX2KjEL6mLDCsq77/a-digital-security-checklist-for-the-ai-age
+Girish Gupta | karma 10 | tags: AI, Practical
+We’re going to see huge, foundational cybersecurity attacks given the rapid rise in AI capabilities. Having worked in hostile environments, I’ve thought a lot about physical and digital security over the years. While you may not be personally targeted, or doing dangerous work, your data is undoubtedly leaked somewhere, and the digital providers you use—for email, banking, social media, etc.—are more and more likely to get hacked.
+
+[26] (lesswrong) Protesting For AI Regulation
+https://www.lesswrong.com/posts/WgG5M9ZZ2C5KawYP5/protesting-for-ai-regulation
+jefftk | karma 14 | tags: AI
+There was an AI protest day today, with parallel protests around the world, and our family went to the Boston one:
+
+
+
+
+
+
+I'm not really a protest person: normally I share my views in writing. But while there's been a lot of writing on the internet about the risk that AI gets us all killed (some of it from me), this can't be an internet-only thing. Way too few people are taking seriously the risk that OpenAI, Anthropic, and others are rapidly building something that could actually cause human extinction. A protest is a literal demonstration that people care, and it expands visibility to the general public.
+
+We talked with the kids about whether they wanted to come, or whether I should take them somewhere while Julia went to the protest. All three did want to come, which makes sense: they've been hearing us talk about this at the dinner table and with friends for months, and the risk impacts them at least as much as it does us.
+
+We painted some signs:
+
+
+
+
+
+
+Clementine was not helpful:
+
+
+
+
+
+
+Mine was a bit on the long side:
+
+
+
+
+
+
+The crowd was mostly students, but there were also a lot of people I recognized from Boston EA meetups. Favorite sign: an "If You Can't Steer Don't Race", painted by someone I'd run into at LessOnline.
+
+It was nominally a protest demanding a US–China treaty that bans more powerful AI until it can be done safely, but in practice it was a much more high level protest around the "slow down AI", "regulate AI", "AI bad", "RSI will get us killed", "AI compani
+
+[27] (lesswrong) The Oldest Text in the Training Data
+https://www.lesswrong.com/posts/CzZR4ZcJoCNi2zqFn/the-oldest-text-in-the-training-data
+frmsaul | karma 42 | tags: History, AI
+What is the oldest text in Claude’s training data? Claude was trained on a non-trivial fraction of everything humans have ever written down. That includes the things you’d expect, like books and research papers. But it also includes microfilm archives, transcribed Betamax tapes, Donald Trump’s prenups, ancient scrolls and Harry Potter fanfiction. It’s a weird library.
+
+So what is the oldest text in Claude's training data? It mostly depends on what we mean by "text". Here are some candidates:
+
+
+The Epic of Gilgamesh
+The Epic of Gilgamesh is considered the world's oldest written "great work of literature"; the earliest versions of it were written in 2100 BC in Sumer. The Sumerians did a fair amount of writing. Their medium was clay tablets. These tablets were designed to endure a few seasons of the Mesopotamian weather; this turned out to generalize well, and instead of surviving for a few years, they survived for millennia. Gilgamesh was lost in the sands of Iraq for a while, but was eventually dug up by European archeologists. The scholar who first translated the Epic to English got so excited by it that he took all of his clothes off and ran around the English museum shouting "I am the first man to read that after more than two thousand years of oblivion."
+
+tablets being scanned
+
+In the 1980s and 90s, scholars digitized many of the dug-up clay tablets. The museums would scan the tablets in normal office scanners and fax them to Assyriologists to phonetically transliterate. T
+
+[28] (lesswrong) On the Brutality of Amdahl's Law
+https://www.lesswrong.com/posts/bMsQ44sKqrFWjuHPb/on-the-brutality-of-amdahl-s-law
+bosoncutter | karma 22 | tags: AI Risk Skepticism, AI, World Modeling
+Following my 3-week visit to Berkeley as described here and featured by ACX here, I told various people I would write in detail why I didn’t stick around to work in AI safety. In this post, I will dance around one object-level disagreement with AI safety and rationalists: why I no longer believe in explosive world transformation due to ASI. There will eventually be follow-up pieces on more object-level arguments and meta-level arguments against AI safety, but I prefer for this post to be mostly self-contained and not explicitly about AI safety.
+
+When I worked in theoretical physics research, I was constantly reminded that if I were just that much smarter and had read that many more papers, I would be able to make the right connection to solve the problem. You are always the bottleneck; it’s always a skill issue. So if you’ve spent the bulk of your conscious life honing your ability to manipulate the pure abstraction of math and computer code, it is staggering to watch the problems you wrestled with for months or years get blown away in hours. You are left wondering how quickly all of the other problems in the world will be resolved - all of disease perhaps? Why not all of biology? Why not all the secrets of the universe?
+
+In December 2025 when Claude Code + Opus 4.5 first made agents feel extremely useful, I was concerned about the job market being obliterated, so I took out “insurance” on rapid-onset white-collar unemployment. Thankfully, those predictions about increasingly
+
+[29] (lesswrong) Slouching Towards Interpretability: Thinking About Computation in Neural Networks
+https://www.lesswrong.com/posts/uCqBdWX6hnoB2A8pk/slouching-towards-interpretability-thinking-about
+CarolusRenniusVitellius | karma 25 | tags: Interpretability (ML & AI), Neuroscience, AI
+This post was written as part of the Iliad Fellowship, where I am mentored by Dmitry Vaintrob and collaborate with Brianna Grado-White. The initial inspiration came from conversation with Richard Ngo and Adrià Garriga-Alonso. To all of these my thanks.
+
+I started writing this essay to share some thoughts on how to reconcile the idea of circuits with gradient descent. In doing this, I've come to change my perspective pretty substantially. The first half of this essay engages a Darwinian picture of circuits, but I think the central point - that we need a clearer ontology of computation in neural networks - holds without reference thereto.
+
+Before, I was thinking about circuits as 'units of selection' - the kinds of things which engage in some gradient-hacking shenanigans to save themselves from gradient descent. I don't think this picture is unimportant or unhelpful, but I've come to think that it sidesteps the hard part of the problem - that the things the circuit Darwinism picture takes for granted are the confused parts, and I think therefore the more insightful to examine. I have gone from thinking "circuit Darwinism, but we need to formalize how to delineate the circuits" to "things that under circuit Darwinism seem like implementation details are actually the deep source of confusion, and we should treat these as the problem". I'll aim to convince you that this change in perspective is the right direction to head in.
+
+I wrote this essay in three parts, plus what became a 
+
