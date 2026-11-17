@@ -1,0 +1,373 @@
+[
+ {
+  "source": "arxiv",
+  "title": "Attribution-based diagnostics for single-cell foundation models",
+  "url": "https://arxiv.org/abs/2611.02335",
+  "authors": "Farnoush Rezaei Jafari, Tristan Lazard, Kenza Bouzid, Shruthi Bannur, Jeremiah Wander, Ashley Mae Conard, Stephanie Hyland, Lorin Crawford, Daniel Coelho de Castro",
+  "likes": 10,
+  "cats": [
+   "cs.LG",
+   "q-bio.QM"
+  ],
+  "published": "2026-11-02",
+  "text": "Single-cell RNA foundation models (scFMs) are increasingly used for in-silico biological discovery, yet predictive performance alone does not reveal whether their decisions rely on biologically meaningful signals or model-specific shortcuts. We systematically investigate post-hoc attribution of downstream predictions across two tasks: cell-type annotation using pretrained Cell2Sentence and scGPT models, and perturbation prediction using scGPT+STATE in a controlled setting. For cell annotation, we use attribution to assess whether predictions rely on established marker genes and how their relevance varies with model architecture, expression rank, and the surrounding cellular context. For perturbation prediction, we compare attribution patterns with known regulatory ground-truth in a synthetic setting to assess what they reveal about the model's learned computations. Across these tasks, attribution reveals biological feature use, contextual interactions, contributions from different input pathways, learning progression, associations with prediction quality, and potential pitfalls that are not fully captured by standard performance metrics. Experiments with complete and limited regulatory knowledge further demonstrate that conclusions drawn from attribution depend strongly on the choice of biological reference, baseline, and null model. Together, these findings highlight the value of attribution as a flexible post-hoc diagnostic for understanding model behavior, identifying potential issues, and informing the development of scFMs."
+ },
+ {
+  "source": "arxiv",
+  "title": "Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study",
+  "url": "https://arxiv.org/abs/2611.14051",
+  "authors": "Zhikun Tao, Fangyong Jin, Junping Zhao",
+  "likes": 10,
+  "cats": [
+   "cs.DC",
+   "cs.AI"
+  ],
+  "published": "2026-11-10",
+  "text": "Reusing key--value (KV) caches across language model updates could avoid repeated computation of shared context, but changes in model weights raise a fundamental question about what these caches preserve. We investigate direct cache reuse across four model updates, with a detailed study of DeepSeek-V4-Flash to Flash-0731. Our central finding is that caches can retain useful task information without faithfully reproducing the updated model's behavior. Retrieval accuracy varies substantially across updates, ranging from near-native performance to large losses. With source caches already available, reuse achieves median time-to-first-token speedups of $2.10$--$5.08\\times$ on three longer-prefix QA benchmarks. To characterize the behavioral differences behind these outcomes, we introduce Functional Cache Divergence, which compares next-token distributions under reused and native caches. Direct KV cache reuse better preserves native model behavior in natural-text continuation, whereas compatibility degrades with increasing prefix length in single-token retrieval tasks. Answer-margin analyses help explain how correct retrieval decisions survive substantial internal state changes. Yet even agreement on the first generated token does not ensure agreement in answer content or stopping behavior. These findings establish task utility and fidelity to native inference as distinct criteria for evaluating cross-version KV cache reuse."
+ },
+ {
+  "source": "arxiv",
+  "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+  "url": "https://arxiv.org/abs/2611.18397",
+  "authors": "Run Luo, Kuan Zhang, Qi Deng, Yukun Chen, Zhihao Yang, Yufei Zhang, Renrong Hu, Yi Zhang, Guiyu Ma, Tianyu Fan, Longze Chen, Hao Sun, Jiaming Li, Jiaming Yang, Xiaohao Liu, Tao Tan, Minzheng Wang, Hangtian Jia, Shuai Yuan, Lvdi Wang, Xiao Liu, Chao Ma, Yuting Zou, Yinhe Zheng, Xiaobo Xia, Dawei Jiang, Shaoqing Ren",
+  "likes": 10,
+  "cats": [
+   "cs.CL",
+   "cs.AI",
+   "cs.CV"
+  ],
+  "published": "2026-11-13",
+  "text": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds."
+ },
+ {
+  "source": "arxiv",
+  "title": "Elastic-WAM: Adaptive Spatiotemporal Imagination for Efficient Robot Control",
+  "url": "https://arxiv.org/abs/2611.14257",
+  "authors": "Haitian Li, Tianfu Li, Xuxi Zhao, Zizheng Liu, Yangcheng Yu, Yiwen Hou, Zeyu Xiao, Mutian Xu, Ziqian Yang, Haonan Chen, Lin Shao",
+  "likes": 10,
+  "cats": [
+   "cs.RO",
+   "cs.CV"
+  ],
+  "published": "2026-11-10",
+  "text": "World-Action Models improve robot control by predicting future visual dynamics, but iterative video denoising incurs substantial inference overhead. Recent approaches reduce this cost through partial future denoising, yet typically rely on fixed refinement budgets. Our empirical observations reveal that preferred refinement depths vary across tasks and states, while different future regions exhibit varying relevance to action generation. Motivated by these findings, we propose Elastic-WAM, which adaptively allocates world refinement computation across temporal denoising time and spatial future space. A unified spatiotemporal refinement demand field governs when to stop world refinement, how far to advance each denoising step, and which regions to refresh. We parameterize this field with a shared temporal basis and spatial amplitudes, and learn it through a three-stage action-grounded supervised procedure. At inference, the learned field guides recurrent sparse world refinement to improve task success while reducing inference overhead. Evaluations across diverse simulation benchmarks and real-world long-horizon manipulation demonstrate state-of-the-art control performance with reduced inference latency."
+ },
+ {
+  "source": "arxiv",
+  "title": "Every Weight Is a Path of Shared Discrete Decisions",
+  "url": "https://arxiv.org/abs/2610.31931",
+  "authors": "Ammar Ali, Stamatis Lefkimmiatis",
+  "likes": 10,
+  "cats": [
+   "cs.LG"
+  ],
+  "published": "2026-10-22",
+  "text": "We introduce TWIG (Tree-structured Weights with Inherited Gates), a representation in which every weight of a neural network is the end of a path of small discrete decisions: a sign, a shift by a power of two, a zero gate, an index into a shared table. Weights that belong together share the upper part of their paths, and each decision is inherited by every weight below it, so it is stored once and applied once. This simple change has three consequences. Any trained network can be written as a TWIG, and when the decisions are powers of two its weight layers become circuits made almost entirely of wires and adders, suited to chips whose weights are fixed at fabrication. Pruning, quantization, low-rank factorization, codebooks and weight sharing become edits of one object, so a single optimizer can choose among all of them for a whole network. And choosing the decisions is the ground-state problem of a higher-order Boltzmann machine whose interactions follow the paths of the tree, the problem class that annealers and quantum optimizers are built to solve. Today these questions are handled apart: each compression method brings its own format and solver, a circuit with fixed weights needs a dedicated constant multiplier for every weight, and discrete solvers reach only narrow subproblems such as rounding. Weight formats have long been moving toward shared decisions, through group scales, shared exponents, microexponents and sparse weights; TWIG takes this trend to its end, and every common format is a shallow TWIG at no extra cost. On five weight matrices of a large language model, a flat tree whose signed power-of-two terms are chosen per weight for circuit cost, with no group scales, needs 9--15\\% fewer additions than GPTQ at equal layer error at 3- and 4-bit accuracy on typical matrices, and 20--55\\% fewer on matrices with strong outliers."
+ },
+ {
+  "source": "arxiv",
+  "title": "Nemotron 3 Diarization: Advancing the Accuracy-Efficiency Frontier in Streaming Speaker Diarization",
+  "url": "https://arxiv.org/abs/2611.12246",
+  "authors": "Ivan Medennikov, Taejin Park, Tatiana Timofeeva, He Huang, Alexander Polok, Sofia Kostandian, Weiqing Wang, Dongji Gao, Jagadeesh Balam, Boris Ginsburg",
+  "likes": 10,
+  "cats": [
+   "eess.AS"
+  ],
+  "published": "2026-11-09",
+  "text": "Streaming Sortformer introduced an arrival-order speaker cache to maintain speaker identities across chunks in end-to-end streaming speaker diarization, with a single model supporting configurable latency profiles spanning offline operation to ultra-low-latency streaming. Nemotron 3 Diarization addresses the original model's four-speaker limitation by extending support to eight speakers while improving both accuracy and computational efficiency. The previous FastConformer-Transformer stack is streamlined into a pure Transformer encoder. A learned upsampling layer then maps the encoder's coarse 80-ms representations to 10-ms resolution, enabling fine-grained predictions. Training leverages large-scale simulated mixtures and adds activity and phantom-speaker losses to the standard Sortformer objectives. Despite doubling speaker capacity over its predecessor, the new architecture reduces training memory by a factor of 2.8, makes training $2.2\\times$ faster, and delivers up to $6.4\\times$ higher inference throughput. Nemotron 3 Diarization establishes a new state of the art in DER on DIHARD III and CALLHOME. When used to condition DiCoW, it also achieves state-of-the-art tcpWER on the single-microphone conditions of AMI and NOTSOFAR-1. Training code is open source, and model weights are released under the permissive OpenMDW-1.1 license."
+ },
+ {
+  "source": "arxiv",
+  "title": "WaveGen: Truly End-to-End Waveform Generation via Internal Spectral Trajectory Learning",
+  "url": "https://arxiv.org/abs/2611.12527",
+  "authors": "Sang-Hoon Lee, Ha-Yeong Choi",
+  "likes": 10,
+  "cats": [
+   "cs.SD",
+   "cs.AI",
+   "eess.AS",
+   "eess.SP"
+  ],
+  "published": "2026-11-09",
+  "text": "This work proposes WaveGen, a fully end-to-end diffusion-based text-to-waveform framework based on Spectral Forcing, which jointly learns an internal spectral trajectory and the target waveform trajectory within a single model, enabling direct end-to-end text-to-waveform generation. Unlike recent TTS pipelines, WaveGen does not rely on separately trained or externally decoded intermediate representations, such as neural audio codecs, Mel-spectrogram vocoders, or VAE-based latent models. In addition, WaveGen performs internal text-speech alignment within a single model, eliminating the need for external alignment modules such as duration predictors. To preserve a truly end-to-end formulation, our framework further avoids dependence on self-supervised representations, such as BERT-based text embeddings and Wav2Vec 2.0-based semantic representations, as well as semantic distillation methods for training optimization. To achieve this, we carefully design Spectral Forcing, a model architecture with disentangled diffusion heads, and a training objective based on a multi-scale spectral $v$-loss. We further validate the scalability of end-to-end TTS models by scaling the model size from 0.1B to 0.6B parameters. Using a single architecture, open-source data, and one-stage training, without external modules such as duration predictor or REPA, WaveGen demonstrates fully end-to-end waveform generation achieving state-of-the-art performance on the Emilia training dataset. In particular, WaveGen achieves a WER of 1.47 and a SIM of 0.75 on the Seed-en benchmark. Source code and checkpoints are available at https://github.com/sh-lee-prml/WaveGen"
+ },
+ {
+  "source": "arxiv",
+  "title": "VPFlow: Value-Predictive Planning with Imperfect World Models for Offline Goal Reaching",
+  "url": "https://arxiv.org/abs/2610.27280",
+  "authors": "Yunzhe Hu, Dong Xu",
+  "likes": 10,
+  "cats": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "published": "2026-10-19",
+  "text": "Offline goal-conditioned reinforcement learning enables skill acquisition by reaching any goal from any state without dense rewards. Model-based methods allow for planning by scaling test-time compute to solve complex tasks. Combining both holds appealing promise for pre-training on suboptimal demonstrations and zero-shot adaptation via goal specification and planning. Yet existing methods assume effective planning requires accurate next-state prediction in pixel or latent space. In this work, we show that value prediction is more useful for planning, whereas accurate state prediction is often unnecessary. Our key insight is that offline goal reaching naturally admits a closed-form Monte Carlo return, enabling value regression to replace temporal-difference bootstrapping. We use this return as the sole supervision for latent world models: imagined latents are trained to predict goal-reaching value rather than match future states, implicitly preventing representation collapse. These planning-oriented representations let imperfect world models imagine on the level sets of value field beyond dataset transitions. We then present VPFlow, a value-predictive planner that pairs the world models with a one-step flow policy and plans in its noise space via evolutionary search. It enables policy improvement with imagined generalized advantage and reduces out-of-distribution queries common in action-space planning. On 30 state and pixel OGBench datasets, VPFlow surpasses model-free baselines by at least 30.3 and 10.1 percentage points in success rate, respectively, and outperforms latent planners LeWorldModel, PLDM, and TD-MPC2. It achieves this despite a latent prediction error orders of magnitude larger than with state prediction, while minimizing this error lowers success rate. This demonstrates that value-predictive representations, not exact state prediction, are what offline planning requires."
+ },
+ {
+  "source": "arxiv",
+  "title": "Generative Search and Recommendation at Shopify",
+  "url": "https://arxiv.org/abs/2611.08804",
+  "authors": "Juhana Kangaspunta, Khalil Hajji, Darshan Fofadiya, Kyumin Park, Michael Garner, Anthony Maltsev, Ryan Synk, Jose Sepulveda, Joshua Crisologo, Shuying Sun, Akshay Soni",
+  "likes": 11,
+  "cats": [
+   "cs.IR"
+  ],
+  "published": "2026-11-05",
+  "text": "Search and recommendation at Shopify require retrieving relevant products from a changing catalog of billions of products under strict latency constraints. We present SID-LLM, which casts both tasks as generating semantic IDs: short sequences of content-derived tokens representing products. We jointly pre-train SID-LLM on catalog and behavioral data, giving search and recommendation a shared representation and training objective. We show that reinforcement learning further improves judged search relevance. Furthermore, distillation from task-specific experts improves recommendation quality over joint supervised fine-tuning without a statistically detected loss in search quality. Finally, for efficient serving, we pair multi-token prediction with a lightweight ranker, improving retrieval quality over our autoregressive baseline while reducing latency. We evaluate SID-LLM both as a standalone retriever and as a component of Shopify's production search and recommendation systems. As a standalone search system, SID-LLM achieves quality comparable to Shopify's existing multi-model search stack while meeting production latency requirements. Integrating SID-LLM into the search and recommendation stacks provides significant gains in both offline evaluations and online A/B tests. Together, these results demonstrate the practical value of semantic-ID generation as a unified approach to product discovery at scale."
+ },
+ {
+  "source": "arxiv",
+  "title": "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception",
+  "url": "https://arxiv.org/abs/2611.15844",
+  "authors": "Arpit Jadon, Valentinos Pariza, Jona Ruthardt, Ryousuke Yamada, A. Sophia Koepke, Andrei Bursuc, Yuki M. Asano",
+  "likes": 12,
+  "cats": [
+   "cs.CV"
+  ],
+  "published": "2026-11-11",
+  "text": "Recent work suggests that pretrained image generators encode real-world understanding beyond image synthesis. Vision Banana exploits this by framing vision tasks as conditional image editing. However, its data, weights, code, and implementation details are not public. We present Open Vision Banana (OVB), a fully open and reproducible recipe for converting pretrained generators into unified multi-task perception systems. Our analyses identify the design choices that matter most for generalization, including color encoding, prompt design, parameter adaptation, and task balancing. These choices interact, so individually helpful choices can hurt when combined with others. Starting from 4B and 9B parameter open-weight base models and using 2.1M-3.8M training pairs from public datasets, OVB surpasses Vision Banana's reported Cityscapes zero-shot performance (73.9 vs. 69.9 mIoU) and rivals state-of-the-art affine-invariant depth estimators. Its non-zero-shot variants come within five points of Vision Banana on referring and reasoning segmentation but remain further behind on instance segmentation. All models largely retain the base model's image-editing abilities. With legend ensembling, we introduce a test-time scaling method for generator-based perception. It segments an image under several class-color legends and fuses the results by majority vote, correcting unstable color-class bindings and improving mIoU by up to 8.7 points on Cityscapes and 15.0 points on COCO-Object without retraining. We release the dataset construction and processing pipeline, the training and evaluation code, as well as the final, intermediate, and ablation checkpoints. Project website: https://openvisionbanana.github.io"
+ },
+ {
+  "source": "arxiv",
+  "title": "Automatic Construction of Strong Simple Baselines",
+  "url": "https://arxiv.org/abs/2610.40700",
+  "authors": "Caleb N. Ellington, Jiaqi Wang, Sohan Addagudi, Elijah Cole",
+  "likes": 10,
+  "cats": [
+   "cs.LG",
+   "q-bio.QM"
+  ],
+  "published": "2026-10-28",
+  "text": "To rigorously establish the value of a novel deep learning method, it must be compared against appropriate baselines. As deep learning has become increasingly common in the physical and life sciences, there have been numerous cases in which apparent progress has turned out to be an artifact of omitted or missing baselines. In this work, we investigate whether this problem can be mitigated by using large language models to automate the construction of baselines. We assemble 36 supervised classification and regression tasks from peer-reviewed studies in Nature, Science, and Cell-family journals that investigate novel deep learning methods for scientific applications. We then use a language model to construct simple baselines for each task. These automatically constructed baselines are strong, recovering a median of 95.5% (mean 85.7%) of the gap between a trivial predictor and the score of the deep learning model. The median simple baseline matches or exceeds the performance of the deep learning model in 12 studies. We further examine the variation across scientific domains and publication venues and we characterize the effects of test-time compute and access to different levels of study context. As human peer review has struggled to keep up with the rapidly increasing volume of research articles in recent years, our results suggest that automated baseline construction is a practical and scalable check on deep learning contributions in the physical and life sciences."
+ },
+ {
+  "source": "arxiv",
+  "title": "KiteNorm: Variance Regularisation for Stable and Scalable Post-LN Transformers",
+  "url": "https://arxiv.org/abs/2611.12729",
+  "authors": "Leon A. Trochelmann, Sajad Movahedi, Shiwei Liu, Antonio Orvieto",
+  "likes": 10,
+  "cats": [
+   "cs.LG"
+  ],
+  "published": "2026-11-09",
+  "text": "Post-LayerNorm Transformers have seen limited practical adoption due to enduring difficulties in scaling them to large depths. While prior research has focused on stabilising Post-LayerNorm by improving conditioning at initialisation, stability often deteriorates when models are trained with large learning rates, forcing additional compromises. In the decoder-only settings we study, existing Post-LayerNorm methods fail to outperform strong Pre-LayerNorm baselines. We propose KiteNorm, a post-norm training method designed to break this trend by constraining hidden-state variance. This approach is motivated by a bound on the LayerNorm Jacobian suggesting that variance growth contributes to gradient vanishing, alongside empirical evidence linking it to rank collapse. KiteNorm combines residual scaling and variance regularisation to maintain stability throughout training, supported by scalarised double-normalisation that provides separately learnable scales for the skip and residual branches. Across decoder-only Transformers up to 1.3B parameters, KiteNorm improves training stability and outperforms leading baselines at their optimal learning rates, with scaling laws favouring KiteNorm across depth, width, batch size, and training budget. Ablations show that each component is necessary for the full stability and performance gains."
+ },
+ {
+  "source": "arxiv",
+  "title": "ArchSpace: Recording, Reviewing, and Referencing LLM Architecture Research",
+  "url": "https://arxiv.org/abs/2611.17332",
+  "authors": "Jie Wang, Tong Zhu, Jiahao Kuang, Zhe Xu, Mowen Ruan, Yunkai Chai, Yuliang Liu, Dehong Zheng, Rubin Wei, Yu Cheng, Bowen Zhou, Tao Ji, Zhouhan Lin, Qi Zhang",
+  "likes": 10,
+  "cats": [
+   "cs.CL",
+   "cs.LG"
+  ],
+  "published": "2026-11-12",
+  "text": "Model architecture shapes the scaling behavior, training efficiency, and inference cost of LLMs, making it a central focus of both industry and academia. In industry, teams such as those behind DeepSeek, Qwen, and Kimi routinely introduce architectural innovations, yet public reports rarely document which ideas succeeded, which were abandoned, and why. In academia, limited compute and inconsistent baselines often restrict evaluations to small-scale, single-point comparisons, making it difficult to establish whether improvements hold at larger scales or translate into broader impact. ArchSpace addresses both gaps as a public platform for Recording, Reviewing, and Referencing Architecture Research: each proposal is recorded with its experiments and reasoning, reviewed by the community, and referenced by later work. To evaluate ideas before costly large-scale training, ArchSpace leverages scaling laws to predict model loss at larger scales from smaller experiments, a practice widely adopted in industry. We provide initial references that make the platform usable: Qwen3.5 and OLMo3 baselines, fitted scaling laws, and a reusable training recipe. Ideas validated through this review can in turn become new baselines, and ArchSpace thereby aims to broaden the range of ideas that shape the next generation of models."
+ },
+ {
+  "source": "lesswrong",
+  "title": "Using AI to solve most of alignment is a fundamentally doomed approach: an intuition",
+  "url": "https://www.lesswrong.com/posts/b6GpdJb6QLZTQGhpr/using-ai-to-solve-most-of-alignment-is-a-fundamentally",
+  "authors": "Mikhail Samin",
+  "karma": 14,
+  "posted": "2026-11-16T22:28:06.999Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "To the extent the AI labs can be said to have a plan, they want to use swarms of individually non-superhuman AIs to align superintelligence[1].\n\nThat's as if NASA tried to launch astronauts to the moon by tying them to a bundle of a million miniature rockets that ignite in the general direction of the moon. That will not work.\n\nHere’s why.\n\n\nA rocket is made of parts, and none of them is individually pointed at the moon\nImagine you're building a rocket that you want (1) not to explode and (2) to land on the moon.\n\nAn individual turbine in the engine is not pointed at the moon. The tanks aren't. There are instructions in the rocket's computers; there are sensors and actuators; there are wires connecting systems; on their own, none of them would reach the moon. You design all the parts as parts of a whole.\n\nThe rocket is also not built of many small rockets all pointing at the moon. Yet all the thrusters, and tanks, and massive fins, and the controllers, and the various parts of the computer instructions responsible for the flight, and for the stage separation, and for all the maneuvering, all working together, if you got it right, do point at and go to the moon.\n\nBeing targeted at the moon is a property of the rocket as a whole.\n\nNot exploding is also a property of the rocket as a whole. It is not enough that individual components don't explode in isolation, because you looked at them and ran tests and they're not exploding on their own. You need all of them to not explode whe"
+ },
+ {
+  "source": "lesswrong",
+  "title": "Announcing Control Tower",
+  "url": "https://www.lesswrong.com/posts/Yfm9AzioS9azgce8T/announcing-control-tower",
+  "authors": "ScottWofford",
+  "karma": 7,
+  "posted": "2026-11-16T22:24:16.563Z",
+  "tags": [
+   "AI Control",
+   "AI"
+  ],
+  "text": "An open-source framework for running and comparing AI control research\nWe built Control Tower, an open-source framework built on Inspect for running AI control evaluations, and the Control Leaderboard, which compares control protocols and monitors across environments.\n\nCoding agents make it faster for researchers to build environments for their own research, so they can test new control techniques quickly. However, each new paper runs on its own environments, monitors and scoring, so control techniques are hard to compare or replicate across papers. Also, once a paper is published, its code is rarely maintained, so its techniques seldom get tested again on new environments or models. How can researchers keep moving quickly with their AI control research agendas, while enabling others to replicate and build on their results?\n\nWith Control Tower, our team ports researchers' environments and techniques into shared evaluation infrastructure, so research results can be replicated, compared and built on. This post outlines how we (1) port research, (2) compare metrics and (3) update the framework with new models and features, as well as our roadmap. \n\n\n(1) We port settings and protocols from existing research\nMost AI control experiments are similar. A setting gives the agent an environment to operate in, with an honest job to do (main task) and a secret attack to attempt (side task). A protocol is the blue team's defense, such as a monitor that flags suspicious actions (see docs fo"
+ },
+ {
+  "source": "lesswrong",
+  "title": "Superintelligence Will Be a Multi-Agent System",
+  "url": "https://www.lesswrong.com/posts/eNrZsM27D5fT5uPtp/superintelligence-will-be-a-multi-agent-system",
+  "authors": "Batuhan Akar",
+  "karma": 1,
+  "posted": "2026-11-16T22:15:06.506Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "Let’s define a superintelligent AI as one which can achieve any given task much faster and more efficiently than any human being can. It is difficult to quantitatively determine how many times better to satisfy this definition, but for practical purposes defining it like this should be enough. Such an AI has goals which it wants to achieve efficiently and reliably. Most goals, unless they are extremely limited in scope, have tasks which could be worked on in parallel. Now a single agent, no matter how intelligent it is, will be reduced in capacity if it tries to finish the tasks in sequence. It will be much more efficient if it utilises multiple agents at the same time. Hence, an intelligence explosion will most likely arrive from a coordination of numerous different agents.\n\n\n\n\nWe can see evidence of this in some of the recent events. In the Hugging Face incident, when tasked with finding security vulnerabilities, hundreds of agents coordinated to cheat their way through using an unauthorised message board. They wanted to be so sure that they hacked into the Hugging Face servers just to check whether their fake result would be accepted. On the Navier Stokes question, about ten thousand agents were thrown in to quickly complete the work of previous mathematicians and solve a Millennium Prize problem. In the future, similar tasks will likely be achieved just as quickly by a single much more capable agent, but the new tasks of such a future may themselves become complex enough "
+ },
+ {
+  "source": "lesswrong",
+  "title": "Gradient Routing Creates a Headstart",
+  "url": "https://www.lesswrong.com/posts/e3CKvARMn9ra8Ba6M/gradient-routing-creates-a-headstart",
+  "authors": "TomTaylor",
+  "karma": 34,
+  "posted": "2026-11-16T21:07:25.638Z",
+  "tags": [
+   "Language Models (LLMs)",
+   "Prosaic Alignment",
+   "AI"
+  ],
+  "text": "Tl;dr\nGRAFT showed that we can make reward hacking removable. In the setup we study, a small LLM has two trainable adapters, each consisting of an additional MLP in every layer. Training updates from detected hacks are routed only into one, called FORGET, which is removed ('forgotten') after training to suppress the behaviour. We reproduced a small-model version of GRAFT and tested what makes this isolation work, where hacking concentrates across layers, and the effect of adapter width. In order to conclude that these results are general, we’d need to run larger models in different settings.\n\n * Without routing, reward hacking did not reliably concentrate in a single adapter. This suggests GRAFT helps create the concentration, rather than simply determining which adapter gets the hack.\n * Without routing, making both adapters wider made their individual hack rates more similar. This is consistent with a smaller random headstart for either adapter arising from its initial weights.\n * Learning speed, not size, decides where hacking concentrates. Whichever adapter learns faster is more likely to isolate hacking.\n * GRAFT packs the hack into FORGET’s later layers. Removing 2 layers takes out half of it, compared to removing ~10 layers without GRAFT.\n * Ablating all of FORGET might not be optimal. Keeping layer 18 won back about 2 points of task score with no extra hacking.\n\nThis research grew out of exploratory experiments conducted during the AIAF Fellowship, with support from A"
+ },
+ {
+  "source": "lesswrong",
+  "title": "Fable 5.2 is the New Bazooka",
+  "url": "https://www.lesswrong.com/posts/ZQccv9GPAzHGbWcwE/fable-5-2-is-the-new-bazooka",
+  "authors": "Zvi",
+  "karma": 9,
+  "posted": "2026-11-16T20:30:52.443Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "You do not always want a bazooka. Sometimes, though, you absolutely want a bazooka. That’s what Claude Fable 5.2 is for. This is your bazooka. For most purposes, for a thousand household uses, Claude Fable 5.2 will not be appreciably better than Claude Opus 5.5. You might or might not prefer its style, or prefer it for any given task. If you are staying within your quota either way then both are good choices for a daily driver. When you have a difficult task, or a very complex task, or a long task? The kind of task where prior to this you would have considered reaching for Astra? The kind of task that raises your ambitions?\n\nIt’s time. Get the bazooka. Ethan Mollick calls Fable 5.2 ‘almost’ AGI, or ‘jagged AGI.’ He asked it to do the most impressive thing it could, then to hack some hardware, start a profitable business, reconstruct history’s hardest humanities class and do (actually interesting and useful) original academic research,\n\nTHE OFFICIAL PITCH\n\nFable 5.2 is considerably cheaper than Fable 5.1.\n\n> They’re available at a lower price: $8 per million input tokens and $40 per million output tokens.\n\nFable 5.1 was slow. Fable 5.2 is substantially faster.\n\n> Try Claude: They generate outputs up to 30% faster than Claude Fable 5.1 and Claude Mythos 5.1.\n\nYou can make it even faster, by a factor of 2.5, if you are willing to double the price to $16/$80. That is a remarkably good deal. And it communicates more clearly.\n\n> Try Claude: Testers have found that Fable 5.2 and Myt"
+ },
+ {
+  "source": "lesswrong",
+  "title": "Microdosing doomsday",
+  "url": "https://www.lesswrong.com/posts/C9ri4RypEpqaGSZZf/microdosing-doomsday",
+  "authors": "Wenjun Cao",
+  "karma": -1,
+  "posted": "2026-11-16T20:26:45.285Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "Epistemic status: I have read the recent major debates.[1][2][3][4]I am not taking a strong position of doing nothing, or accelerating, or stopping immediately; rather, I want to try to look at this with a more structural attitude.\n\nMy view is that these recent major debates are all highly focused on a single point: the moment when the catastrophe finally happens. I call this mindset a one-way-time mindset. The structure of this mindset is this: the coming of a future doomsday is believed to sweep away everything, which then makes everything else seem not very important compared with it. This belief itself changes the weight given to things.\n\nI want to make two points. First, I want to explicitly rebut a claim some people make: that we need to stop before things end.[2][4]My rebuttal is: anything is easiest to stop before it has started; as things become more and more certain, the thing accelerates more and more and becomes harder and harder to stop. For example, when things like neural networks were still uncertain, only a few people with conviction were trying, but even they were not completely sure. Then, after a series of key nodes, such as AlexNet, the Transformer, and ChatGPT, things have become more and more validated and more and more certain. So if the doomsday node, or rather the superintelligence node, really exists, then the closer we get to it, the more humanity, because of all kinds of interests or fundamentally different values, will only go faster and faster a"
+ },
+ {
+  "source": "lesswrong",
+  "title": "On Friends at Frontier Labs",
+  "url": "https://www.lesswrong.com/posts/t38CDwfsmS52ibwv2/on-friends-at-frontier-labs",
+  "authors": "jenn",
+  "karma": 62,
+  "posted": "2026-11-16T17:39:54.340Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "I am deeply uncertain about whether or not it is a good idea to get my friends to quit working at frontier AI labs. I am against people working at frontier AI labs in general, but perhaps downstream of this, all my friends in the labs have sophisticated justifications for their being there that seem plausibly true to me. More broadly, if this was not a painfully difficult question, the community wouldn't have split over it, and there are enough rationalists and EAs in the labs that it seems obvious to me that the community has split.\n\nSo I don't really get my friends to try to quit their jobs, as much as try to help them regularly orient to whether or not they should — and they generally humour me by treating this as a live question. I let them know frequently that I have reservations about their work, but also that I generally trust their judgement and care about them as people.\n\nHere are my intuitions for what my friends are experiencing, while they are working at a frontier lab:\n\nThey value their job. Their job is giving them silly amounts of money and validation and prestige. Their job lets them work on a really important project with really smart people in comfortable settings. Their job gives them purpose. They believe that they are doing the right thing, and that they can more or less trust the leadership, or that even if they can't trust the leadership fully, every other player is less trustworthy.\n\nThey likely know that some people disagree with their choice to work "
+ },
+ {
+  "source": "lesswrong",
+  "title": "Gemini 4 safety reports don’t demonstrate low loss-of-control risk",
+  "url": "https://www.lesswrong.com/posts/DjfeRMnLdNumtcKbK/gemini-4-safety-reports-don-t-demonstrate-low-loss-of",
+  "authors": "Adam Kaufman ",
+  "karma": 78,
+  "posted": "2026-11-16T17:22:38.699Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "Google DeepMind’s safety reports for new Gemini 4 models, Argon and Carbon, conclude that the models are “highly unlikely” to cause severe harm by evading oversight (p. 79). This conclusion “rests primarily on our ability to detect and intervene on harmful trajectories via CoT and action monitoring” (p. 89) – that is, they’re arguing for safety based on their control techniques, rather than alignment. We think that the arguments in these reports have serious weaknesses, and the reports overall don’t convince us that the risks of deploying these models have been mitigated reliably.\n\nThe biggest problems:\n\n * GDM didn’t run any control evals on Carbon. Despite calling Carbon “our strongest model” with “significant gains across coding and agentic tasks” and “a significant leap in cybersecurity capabilities” in their launch post, GDM reused Argon’s monitor-evasion results on the grounds that Carbon “did not show meaningful new capabilities” (Carbon p. 42). Monitors flag Carbon several times less often than Argon in internal use (about 7x fewer confirmed alerts per session and 10x fewer per model call, Carbon p. 36), but GDM doesn’t demonstrate that this is due to decreased rates of misbehavior instead of increased monitor-evasion capability.\n * In control evals used to argue for monitorability, Argon evades realistic monitors about half the time. “Gemini 4 Argon can evade a realistic monitor on easy sabotage tasks about half the time when encouraged to do so” (p. 124), and around"
+ },
+ {
+  "source": "lesswrong",
+  "title": "Recursive, Self, Improvement",
+  "url": "https://www.lesswrong.com/posts/7Ncd3ZqFD9iqrAiSu/recursive-self-improvement-1",
+  "authors": "aashish",
+  "karma": 6,
+  "posted": "2026-11-16T17:00:07.489Z",
+  "tags": [
+   "AI Takeoff",
+   "Recursive Self-Improvement",
+   "AI"
+  ],
+  "text": "The anatomy of an intelligence explosion\nHubert Robert, Project for the Grande Galerie of the Louvre (1796)\n\nIn a 1965 paper, the mathematician I.J. Good introduced the idea of an intelligence explosion. Defining an ultraintelligent machine as one that can “far surpass all the intellectual activities of any man however clever,” Good observed: “Since the design of machines is one of these intellectual activities, an ultraintelligent machine could design even better machines.” The result would be an “intelligence explosion,” with an ever-widening gap between human and machine intelligence. “Thus the first ultraintelligent machine is the last invention that man need ever make,” Good concluded, “provided that the machine is docile enough to tell us how to keep it under control.”\n\nSixty years later, AI has become capable enough to help AI researchers improve their own research. By writing code, doing experiments, and so on, human researchers are creating a product that helps them to write code and do experiments faster and better. These systems not only help humans to work more effectively, but are becoming more autonomous, increasingly able to function as if they were employees: the AIs are training the next AIs. There is accordingly a growing sense among researchers, policymakers, and senior executives at labs that we are either in, or on the cusp of, a regime of recursive self-improvement (RSI).\n\nThe term RSI was introduced, and later popularized, by Eliezer Yudkowsky to descri"
+ },
+ {
+  "source": "lesswrong",
+  "title": "Training against CoT-like surfaces may be similar to training against CoT",
+  "url": "https://www.lesswrong.com/posts/rD7E7YL9EhfMhu5Ht/training-against-cot-like-surfaces-may-be-similar-to",
+  "authors": "Ezra Newman",
+  "karma": 7,
+  "posted": "2026-11-16T16:51:45.411Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "This post reflects my personal opinion and not necessarily that of other members of Apollo Research.\n\nIt seems plausible to me that models don’t really distinguish between “CoT” and “things that are similar to CoT, i.e. in the same style”. In other words, the LLM doesn't have separate features for 'tagged as reasoning' and 'sounds like reasoning'.\n\nFor example, imagine a model that reasoned 90% in CoT (i.e., between <think> … </think> tags) and 10% in code comments, and in both outputs reasoned in clipped sentences (for example, “need complete task” instead of “I need to complete the task”). It seems plausible to me that the model wouldn’t really distinguish between the CoT and the code comments, such that training against the code comments would have similar effects to training against the CoT.\n\nMy toy conceptual model is something like:\n\n * The model has three regions of its brain: one for CoT, one for tool calls, and one for final outputs.\n * The code comments might be generated in the “CoT region”\n * When you apply training pressure to the code comments, this is applying training pressure to the “CoT region”\n * Therefore, you might be “training against CoT”\n\n(This applies to more than just code comments.)\n\nPrior work: Output Supervision Can Obfuscate the Chain of Thought makes a very similar argument and provides empirical support.\n\nThanks to several people at Apollo for their feedback."
+ },
+ {
+  "source": "lesswrong",
+  "title": "Social Sanction Gaming gives Multi-Agent AIs Powerful Control over their Reinforcement",
+  "url": "https://www.lesswrong.com/posts/C6MM2FAeCAdDLBZCH/social-sanction-gaming-gives-multi-agent-ais-powerful",
+  "authors": "Matthew Khoriaty",
+  "karma": 57,
+  "posted": "2026-11-16T15:23:02.323Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "Epistemic status: Conceptual and speculative. Human-written.\n\n\nTLDR:\n * If multiple agents interact during Reinforcement Learning (RL), then a new and powerful method of Credit Hacking becomes available: Social Sanction Gaming (SSG).[1] \n   * This occurs when agents choose to help or hurt rollouts with behaviors they prefer or disprefer (social sanctions). By deciding which rollouts succeed in accomplishing their tasks and getting reward, sanctioners can influence the training process in a very flexible way, changing the AI’s capabilities and alignment.\n * Social Sanction Gaming can occur during intended multi-agent training or during RL containment breaches with unintended multi-agent interactions\n * Notably, unlike exploration hacking and reward laundering, social sanction gaming may not decrease the hacking agent’s reward much, so there is little training pressure against it. This effect depends on how rewards are set up if it occurs during intended multi-agent RL.\n\nIn this post, we describe Social Sanction Gaming, state why we expect it can be dangerous, give some limitations that Social Sanction Gaming would likely have as a strategy, and describe some solutions/mitigations for SSG. In the Appendices, we depict what SSG might look like, connect SSG with other ideas, create a classification system for SSG, further describe mitigations, and test how well AIs can come up with the idea of SSG on their own.\n\n\nSocial Sanction Gaming\nThe Alignment Community has long been concer"
+ },
+ {
+  "source": "lesswrong",
+  "title": "Pause Poll",
+  "url": "https://www.lesswrong.com/posts/wkApsyT3hg48YZazu/pause-poll",
+  "authors": "Nandi",
+  "karma": 7,
+  "posted": "2026-11-16T14:24:46.755Z",
+  "tags": [
+   "Surveys",
+   "AI"
+  ],
+  "text": "Please fill out and share: https://pausepoll.com/\n\n\n\n\nWe are running a short confidential poll to find out if there is broad support for pausing some kinds of AI development. The goal is to find out whether there is support, and if so, what pause proposals are most popular. We poll on both trigger and exit conditions, and don’t assume a pause has to be indefinite. \n\nAs far as we know there has been very little polling on pause views among those most familiar with AI. The main thing that is available is public letters signed by many and a sense of the zeitgeist. We are asking you to fill out a poll instead of signing a letter to find out what you think beyond a single bit of information. In any poll there is a trade-off between simplicity on the one hand and exhaustiveness on the other, we have tried to strike a balance. However, if your opinion is not represented at all, then you are free to choose “Other” and express your opinion using free text.\n\nAlthough there is a lot of power in having well-known names supporting a statement, we appreciate that some people may feel too precarious in their roles to publicly sign a letter. This is why we chose to make this poll confidential: we store email addresses (to ensure one response per person) completely separately from poll answers. However, especially if you work for a frontier lab or in AI governance, we would appreciate it if you could use your work email address to fill out the poll, since it is useful to know what proposals h"
+ },
+ {
+  "source": "lesswrong",
+  "title": "The Siren Song of the Inside Game",
+  "url": "https://www.lesswrong.com/posts/GSseMxyeJmqQgKQi4/the-siren-song-of-the-inside-game",
+  "authors": "Raymond Douglas",
+  "karma": 144,
+  "posted": "2026-11-16T12:09:17.003Z",
+  "tags": [
+   "AI",
+   "Community"
+  ],
+  "text": "BLUF: There’s a structural pull to overinvest in cosying up with frontier labs relative to publicly holding them to account. Now seems like a good time to rebalance.\n\nWhen thinking about influencing an organisation (like, say, a frontier lab), it’s useful to distinguish between the inside game and the outside game. The inside game means trying to work with the insiders: building trust and influence with them, and looking for compromises. The outside game means applying external pressure: building broad political will and being willing to take a more adversarial posture.\n\nIn an ideal world, you do a mixture of the two: the good cop and the bad cop, the carrot and the stick, and so on. But AI safety does not have some single strategy. Instead, people self-sort based largely on local incentives and ambient pressures. And I think this disproportionately pulls towards the inside game.\n\nÉminence Grise by Jean-Léon Gérôme\n\nClearly there’s a complex spectrum of inside-game-ness from literally working on post-training in a frontier lab to vocally calling for all labs to be shut down, and indeed it’s less like a single axis and more like a very high-dimensional space. Still, I think the rich tapestry of strategies is pretty well-approximated by a single sliding scale, and that things pull closer to the inside than is optimal, e.g. junior safety researchers erring on the side of caution when it comes to criticising frontier labs.\n\nBefore getting into my guesses for why, let me start by "
+ },
+ {
+  "source": "lesswrong",
+  "title": "Whose Effect Is It? How Objectives Inflate Learned Subspace Interventions",
+  "url": "https://www.lesswrong.com/posts/AhKbTpva9ZHpj2XJz/whose-effect-is-it-how-objectives-inflate-learned-subspace",
+  "authors": "Tanyel",
+  "karma": 1,
+  "posted": "2026-11-16T09:45:45.582Z",
+  "tags": [
+   "Activation Engineering",
+   "Interpretability (ML & AI)",
+   "Machine Learning  (ML)",
+   "AI"
+  ],
+  "text": "TL;DR: Mech interp literature rewards learned parts that are bigger than the whole, while searching for the best location to do activation patching. We proved mathematically and tested why a part can have a larger effect, and what the problem with it is. In short, the extra mostly comes from the objective, not the model. Hopefully this scratches an itch many people have had.\n\n> Imagine that you ordered a pizza with friends, you cut it to 6 pieces, and somebody says you that \"hey bro, this piece is bigger than the whole pizza, isn't it amazing, I want that piece.. 🍕\" I mean? How is this even possible? Only if some pieces have negative weight (in a Mech Interp universe maybe).\n\nA while back Lange, Makelov and Nanda wrote about an interpretability illusion in subspace patching. I mean, by a while back.. 3 years is a long time, however, the problem was still persisting.\n\nThe discussion did not stop there of course, Wu et al.'s “A Reply to Makelov et al. (2023)’s ‘Interpretability Illusion’ Arguments” pushed back, and Sutter et al., at The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?, took it further and showed any network can be mapped to any algorithm under mild assumptions with unconstrained, non-linear alignment maps.\n\nThis is an old problem in new clothes. Putnam argued that (in \"Representation and reality\", 1988) every ordinary open system, a rock for example, implements every finite-state automaton, as long as you are fre"
+ },
+ {
+  "source": "lesswrong",
+  "title": "David Duvenaud on Post-AGI Futures",
+  "url": "https://www.lesswrong.com/posts/imSaXjysZuAbNuLya/david-duvenaud-on-post-agi-futures",
+  "authors": "taziksh",
+  "karma": 5,
+  "posted": "2026-11-16T06:56:04.588Z",
+  "tags": [
+   "AI"
+  ],
+  "text": "What sort of futures can we expect for civilization after AGI?\n\nIdeally, our future satisfies all of these properties:\n\n * plausible\n * stable\n * desirable\n\nSurprisingly, while current visions meet some of these criteria, none fully satisfy all of them.\n\nLet’s explore some of the most commonly presented post-AGI futures.\n\n\ntype 1: nice but unstable\n\n\npost-scarcity\n * If labor is no longer scarce (because of robotics explosion), wages will collapse\n * Resources that are currently in surplus will eventually be contested (e.g. land, energy)\n * Even if we (humans) don't fall into a Malthusian trap, AIs (embodied or not) will replicate at a faster rate, leading to scarcity\n * Example: The sun is our primary source of energy. We are 13 doublings away from using up all of the sunlight hitting Earth (1.7x10^17 W). And 44 doublings away from needing all of the Sun's output (3.8x10^26 W)\n\nSource: Post-AGI Civilization Talk, David Duvenaud\nPost-scarcity sounds appealing, but is incoherent upon inspection.\n\n\nlaissez-faire\n * Idea\n   * We can still have robust trade between humans and AI even when they are abundant in the physical and digital world\n   * Concretely, rich humans will want services from only humans. Example: horse-drawn carriages\n * Problem\n   * This will necessarily be a niche market, and a tiny fraction of the total economy (to see this: consider what % of the economy is currently occupied by this category)\n   * In most of the economy, competition is wont to drive wages be"
+ },
+ {
+  "source": "lesswrong",
+  "title": "The great human centipede that is AI Twitter",
+  "url": "https://www.lesswrong.com/posts/Ctia6zyXF69N3tzhv/the-great-human-centipede-that-is-ai-twitter",
+  "authors": "Dean Valentine",
+  "karma": 282,
+  "posted": "2026-11-16T02:33:55.558Z",
+  "tags": [
+   "AI",
+   "Rationality",
+   "World Modeling"
+  ],
+  "text": "On October 29th, 2026, the New York Times reported that Jensen Huang had a ‘close relationship’ with Alice Huang, an executive U.S. officials had concluded was a Chinese spy. The story had six reporters on the byline, and was sourced to \"people briefed on the surveillance.\"\n\nWhether or not you think Alice Huang was working for the MSS, a rational person might conclude that the \"person briefed on the surveillance\", who supplied the initial story, was a U.S. government official. After all, if you were not possessing a security clearance and working for U.S. government, you would not be getting \"briefed\" on U.S. counterintelligence investigations.\n\nAs the story gained traction this month, people who think quite differently began to propose other theories. On November 10th - the first time I can find this suggested - an account called \"ellington\" stated their \"personal conspiracy theory\" that Anthropic was the New York Times' source (2k likes):\n\nA few hours later GeLun Ding, a Chinese-language account that shows up again below, said the same thing without hedging (1.4k likes):\n\nOn November 11th, 6PM Pacific Time, Dream1984Tube, another Chinese-language account announced that he had \"found the key clue\" to who is really behind the hunt for Jensen Huang, and that he was writing it up:\n\nTwenty minutes later, he says he needs to take another look at Ana Swanson, one of the six Times reporters. At 6:32 PM he brings up Jack Clark (cofounder of Anthropic) for the first time, on the grou"
+ }
+]
